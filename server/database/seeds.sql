@@ -1,12 +1,12 @@
 
 -- -- Insert Categories
-INSERT INTO Categories (id,name)
+INSERT INTO Categories (id,name,image)
 VALUES
-  (1,'Breakfast'),
-  (2,'Salads'),
-  (3,'Main Dishes'),
-  (4,'Desserts'),
-  (5,'Drinks');
+  (1,'Breakfast','Avocado_Toast.jpeg'),
+  (2,'Salads','Caprese_Salad.jpeg'),
+  (3,'Main Dishes','Main_dishes.jpg'),
+  (4,'Desserts','Desserts.jpg'),
+  (5,'Drinks','Drinks.jpg');
 
 -- Insert Ingredients
 INSERT INTO Ingredients (id,name, quantity)

@@ -17,7 +17,7 @@ app.use(express.static(public));
 app.use(express.json());
 app.use(morgan('dev'));
 
-// Connect to Database
+
 const pool = require('./database/connect');
 
 // Use Routed Endpoints
@@ -31,10 +31,10 @@ app.use('/api/user', userRoutes(pool));
 
 
 const ingredientsRoutes = require('./routes/ingredientsRoutes');
-app.use('/api/ingredients',ingredientsRoutes(pool));
+app.use('/api/ingredients', ingredientsRoutes(pool));
 
 const recipesRoutes = require('./routes/recipesRoutes');
-app.use('/api/recipes',recipesRoutes(pool));
+app.use('/api/recipes', recipesRoutes(pool));
 
 
 app.listen(PORT, () => {

@@ -1,22 +1,22 @@
 import React from 'react';
 import CategoriesListItem from './CategoriesListItem';
-
+import '../styles/styles/category.css'
 function CategoriesList(props) {
   const categories = props.categories || [];
-
- console.log("in step1",categories)
-  
 
   const list = categories.map((category) => {
     return <CategoriesListItem
       key={category.id}
       category={category}
-    //   onClick={() => removeItem(item.id)}
        />;
   });
 
   return (
-    <ul>{list}</ul>
+   
+<div className='category_card'>
+  <div className='category'>  {list}</div> </div>
+
+     
   );
 }
 
