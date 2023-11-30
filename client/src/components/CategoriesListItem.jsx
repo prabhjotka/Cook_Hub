@@ -9,15 +9,19 @@ const handleClick=function(id)
   console.log("click here",{id});
 }
   return (
-  <Card style={{ width: '25rem' }} border="secondary">
-<Card.Img variant="bottom" src={image} className='category-img'/>
-      <Card.Body>
-        <Button variant="primary" onClick={() => handleClick(id)}> 
-         {name}</Button>
-      </Card.Body>
-    </Card>   
-  
+<>
 
+<div className="col">
+      <div className="card border-light mb-3">
+        <img src={image} className="card-img-bottom" alt="..." />
+        <div className="card-body">
+        <button type="button" className="btn btn-info" onClick={() => handleClick(id)}>  {name}</button>
+          
+          
+        </div>
+      </div>
+    </div>
+  </>
   );
 }
 export default CategoriesListItem;

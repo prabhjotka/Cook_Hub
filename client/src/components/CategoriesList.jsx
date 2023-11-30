@@ -13,9 +13,11 @@ function CategoriesList(props) {
 
   return (
    
-<div className='category_card'>
-  <div className='category'>  {list}</div> </div>
-
+    <div className="container" style={{ position: 'relative', overflow: 'hidden' }}>
+    <div className="row row-cols-2 row-cols-md-2 g-4">
+      {list}
+    </div>
+  </div>
      
   );
 }
