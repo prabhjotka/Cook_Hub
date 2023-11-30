@@ -1,9 +1,8 @@
 .category_card{
-display:flex;
-flex-direction: row;
-flex-wrap: wrap;
-
-gap: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 30px;
 }
 
 .category {
@@ -16,4 +15,9 @@ gap: 30px;
     border-radius: 8px;
     max-width: fit-content;
     
+  }
+  .category-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px; /* Optional: Add border-radius to images */
   }

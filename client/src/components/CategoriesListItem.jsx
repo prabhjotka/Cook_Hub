@@ -10,7 +10,7 @@ const handleClick=function(id)
 }
   return (
   <Card style={{ width: '25rem' }} border="secondary">
-<Card.Img variant="top" src={image}/>
+<Card.Img variant="bottom" src={image} className='category-img'/>
       <Card.Body>
         <Button variant="primary" onClick={() => handleClick(id)}> 
          {name}</Button>
