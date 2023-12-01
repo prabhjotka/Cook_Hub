@@ -1,5 +1,5 @@
 
--- -- Insert Categories
+
 INSERT INTO Categories (id,name,image)
 VALUES
   (1,'Breakfast','Avocado_Toast.jpeg'),
@@ -8,7 +8,7 @@ VALUES
   (4,'Desserts','Desserts.jpg'),
   (5,'Drinks','Drinks.jpg');
 
--- Insert Ingredients
+
 INSERT INTO Ingredients (id,name, quantity)
 VALUES
   (1,'Eggs', '4'),
@@ -32,14 +32,14 @@ VALUES
   (19,'Coffee', '1 cup'),
   (20,'Ice Cubes', 'As needed');
 
--- Insert more Recipes with Ingredients IDs and Detailed Instructions (All 20 Recipes)
+
 INSERT INTO Recipes (id, name, description, instructions, nutritional_information, image_url, category_id, user_id)
 VALUES
   (
     1,
     'Vegetarian Stir-Fry',
     'Colorful and flavorful vegetable stir-fry',
-    '{"Chop and stir-fry your favorite vegetables.", "Add soy sauce and spices.", "Serve over rice."}',
+    'Chop and stir-fry your favorite vegetables, Add soy sauce and spices, Serve over rice.',
     '{"calories": 250, "protein": 8, "carbs": 30}',
     'Vegetarian_Stir_Fry.jpeg', -- Updated image URL
     3,
@@ -49,7 +49,7 @@ VALUES
     2,
     'Margherita Pizza',
     'Classic pizza with tomato, mozzarella, and basil',
-    '{"Roll out pizza dough.", "Add tomato sauce, cheese, and fresh basil.", "Bake until crust is golden."}',
+    'Roll out pizza dough, Add tomato sauce, cheese, and fresh basil, Bake until crust is golden.',
     '{"calories": 400, "protein": 15, "carbs": 45}',
     'Margherita_Pizza.jpeg', -- Updated image URL
     3,
@@ -59,7 +59,7 @@ VALUES
     3,
     'Avocado Toast',
     'Simple and healthy avocado toast',
-    '{"Toast bread.", "Spread mashed avocado on top.", "Sprinkle with salt and pepper."}',
+    'Toast bread, Spread mashed avocado on top, Sprinkle with salt and pepper.',
     '{"calories": 200, "protein": 5, "carbs": 15}',
     'Avocado_Toast.jpeg', -- Updated image URL
     1,
@@ -69,7 +69,7 @@ VALUES
     4,
     'Mango Salsa Chicken',
     'Grilled chicken topped with fresh mango salsa',
-    '{"Grill chicken breasts.", "Top with a mix of diced mango, red onion, cilantro, and lime juice."}',
+    'Grill chicken breasts, Top with a mix of diced mango, red onion, cilantro, and lime juice.',
     '{"calories": 300, "protein": 20, "carbs": 25}',
     'Mango_Salsa_Chicken.jpeg', -- Updated image URL
     3,
@@ -79,7 +79,7 @@ VALUES
     5,
     'Spicy Shrimp Tacos',
     'Tacos filled with spicy shrimp, slaw, and avocado',
-    '{"Saute shrimp with spices.", "Fill tortillas with shrimp, slaw, and sliced avocado."}',
+    'Saute shrimp with spices., Fill tortillas with shrimp, slaw, and sliced avocado.',
     '{"calories": 350, "protein": 18, "carbs": 30}',
     'Spicy_Shrimp_Tacos.jpeg', -- Placeholder image URL
     3,
@@ -89,9 +89,9 @@ VALUES
     6,
     'Greek Salad',
     'Fresh and tangy Greek salad with feta cheese',
-    '{"Combine chopped cucumber, tomatoes, olives, and feta.", "Drizzle with olive oil and sprinkle with oregano."}',
+    'Combine chopped cucumber, tomatoes, olives, and feta, Drizzle with olive oil and sprinkle with oregano.',
     '{"calories": 300, "protein": 10, "carbs": 20}',
-    'Greek_Salad.jpeg', -- Updated image URL
+    'Greek_Salad.jpg', -- Updated image URL
     2,
     1
   ),
@@ -99,7 +99,7 @@ VALUES
     7,
     'Pineapple Fried Rice',
     'Sweet and savory fried rice with pineapple',
-    '{"Stir-fry rice with diced pineapple, vegetables, and soy sauce.", "Optional: add cooked shrimp or chicken."}',
+    'Stir-fry rice with diced pineapple, vegetables, and soy sauce, Optional: add cooked shrimp or chicken.',
     '{"calories": 400, "protein": 12, "carbs": 50}',
     'Pineapple_Fried_Rice.jpeg', -- Updated image URL
     3,
@@ -109,7 +109,7 @@ VALUES
     8,
     'Caprese Salad',
     'Classic Italian salad with tomatoes, mozzarella, and basil',
-    '{"Slice tomatoes and mozzarella.", "Arrange on a plate with fresh basil.", "Drizzle with balsamic glaze."}',
+    'Slice tomatoes and mozzarella. Arrange on a plate with fresh basil. Drizzle with balsamic glaze.',
     '{"calories": 250, "protein": 15, "carbs": 10}',
     'Caprese_Salad.jpeg', -- Updated image URL
     2,
@@ -119,7 +119,7 @@ VALUES
     9,
     'Sushi Rolls',
     'Homemade sushi rolls with your favorite fillings',
-    '{"Roll sushi with rice, seaweed, and your choice of fillings.", "Serve with soy sauce and pickled ginger."}',
+    'Roll sushi with rice, seaweed, and your choice of fillings, Serve with soy sauce and pickled ginger.',
     '{"calories": 350, "protein": 18, "carbs": 40}',
     'Sushi_Rolls.jpeg', -- Updated image URL
     3,
@@ -129,7 +129,7 @@ VALUES
     10,
     'Mushroom Risotto',
     'Creamy and comforting mushroom risotto',
-    '{"Saute mushrooms and onions.", "Cook Arborio rice with broth until creamy.", "Finish with Parmesan cheese."}',
+    'Saute mushrooms and onions. Cook Arborio rice with broth until creamy, Finish with Parmesan cheese.',
     '{"calories": 400, "protein": 10, "carbs": 45}',
     'Mushroom_Risotto.jpeg', -- Updated image URL
     3,
@@ -139,7 +139,7 @@ VALUES
     11,
     'Fruit Smoothie Bowl',
     'Healthy and colorful fruit smoothie bowl',
-    '{"Blend your favorite fruits with yogurt.", "Top with granola, nuts, and fresh berries."}',
+    'Blend your favorite fruits with yogurt., Top with granola, nuts, and fresh berries.',
     '{"calories": 300, "protein": 8, "carbs": 40}',
     'Fruit_Smoothie_Bowl.jpeg', -- Updated image URL
     1,
@@ -149,7 +149,7 @@ VALUES
     12,
     'BBQ Pulled Pork Sandwich',
     'Slow-cooked pulled pork in barbecue sauce',
-    '{"Cook pork shoulder in slow cooker.", "Shred and mix with barbecue sauce.", "Serve in a bun."}',
+    'Cook pork shoulder in slow cooker, Shred and mix with barbecue sauce, Serve in a bun.',
     '{"calories": 500, "protein": 25, "carbs": 35}',
     'BBQ_Pulled_Pork_Sandwich.jpeg', -- Updated image URL
     3,
@@ -159,7 +159,7 @@ VALUES
     13,
     'Cauliflower Crust Pizza',
     'Low-carb pizza with cauliflower crust',
-    '{"Make crust with cauliflower, cheese, and egg.", "Add your favorite toppings.", "Bake until crispy."}',
+    'Make crust with cauliflower, cheese, and egg, Add your favorite toppings, Bake until crispy.',
     '{"calories": 350, "protein": 15, "carbs": 25}',
     'Cauliflower_Crust_Pizza.jpeg', -- Updated image URL
     3,
@@ -169,7 +169,7 @@ VALUES
     14,
     'Lemon Garlic Butter Shrimp',
     'Quick and flavorful lemon garlic butter shrimp',
-    '{"Saute shrimp in garlic and butter.", "Squeeze fresh lemon juice.", "Garnish with parsley."}',
+    'Saute shrimp in garlic and butter, Squeeze fresh lemon juice, Garnish with parsley.',
     '{"calories": 250, "protein": 20, "carbs": 5}',
     'Lemon_Garlic_Butter_Shrimp.jpeg', -- Updated image URL
     3,
@@ -179,7 +179,7 @@ VALUES
     15,
     'Quinoa Salad',
     'Nutrient-packed quinoa salad with vegetables',
-    '{"Cook quinoa.", "Toss with diced cucumber, cherry tomatoes, and feta.", "Drizzle with olive oil."}',
+    'Cook quinoa, Toss with diced cucumber, cherry tomatoes, and feta, Drizzle with olive oil.',
     '{"calories": 300, "protein": 12, "carbs": 40}',
     'Quinoa_Salad.jpeg', -- Updated image URL
     2,
@@ -189,7 +189,7 @@ VALUES
     16,
     'Chicken Caesar Wrap',
     'Grilled chicken, romaine lettuce, and Caesar dressing in a wrap',
-    '{"Grill chicken.", "Wrap with romaine lettuce and Caesar dressing in a tortilla."}',
+    'Grill chicken, Wrap with romaine lettuce and Caesar dressing in a tortilla.',
     '{"calories": 400, "protein": 20, "carbs": 30}',
     'Chicken_Caesar_Wrap.jpeg', -- Updated image URL
     3,
@@ -199,7 +199,7 @@ VALUES
     17,
     'Vegetable Lasagna',
     'Layered vegetable lasagna with marinara sauce and cheese',
-    '{"Layer lasagna noodles with marinara sauce, vegetables, and cheese.", "Bake until bubbly."}',
+    'Layer lasagna noodles with marinara sauce, vegetables, and cheese, Bake until bubbly.',
     '{"calories": 350, "protein": 15, "carbs": 30}',
     'Vegetable_Lasagna.jpeg', -- Updated image URL
     3,
@@ -209,7 +209,7 @@ VALUES
     18,
     'Peach Cobbler',
     'Sweet and juicy peach cobbler with a golden crust',
-    '{"Mix peaches with sugar and spices.", "Top with a buttery biscuit crust.", "Bake until golden brown."}',
+    'Mix peaches with sugar and spices, Top with a buttery biscuit crust, Bake until golden brown.',
     '{"calories": 300, "protein": 3, "carbs": 45}',
     'Peach_Cobbler.jpeg', -- Updated image URL
     4,
@@ -219,7 +219,7 @@ VALUES
     19,
     'Teriyaki Salmon',
     'Grilled teriyaki-glazed salmon fillets',
-    '{"Marinate salmon in teriyaki sauce.", "Grill until fish flakes easily with a fork."}',
+    'Marinate salmon in teriyaki sauce, Grill until fish flakes easily with a fork.',
     '{"calories": 350, "protein": 25, "carbs": 15}',
     'Teriyaki_Salmon.jpeg', -- Updated image URL
     3,
@@ -229,7 +229,7 @@ VALUES
     20,
     'Chocolate Avocado Mousse',
     'Rich and creamy chocolate mousse made with avocados',
-    '{"Blend avocados, cocoa powder, and sweetener until smooth.", "Chill before serving."}',
+    'Blend avocados, cocoa powder, and sweetener until smooth, Chill before serving.',
     '{"calories": 200, "protein": 5, "carbs": 20}',
     'Chocolate_Avocado_Mousse.jpeg' ,-- Updated image URL
     4,

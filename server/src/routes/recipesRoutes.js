@@ -2,10 +2,20 @@ const express = require('express');
 const router = express.Router();
 
 const routes = function(pool) {
-  const {getrecipes, addrecipes, deleterecipes} = require('../database/recipes')(pool);
+  const {getrecipes, addrecipes, deleterecipes,getrecipesBycategory} = require('../database/recipes')(pool);
 
   router.get("/", (req, res) => {
     getrecipes().then(data => {
+      res.json(data);
+    })
+      .catch(err => {
+        console.log(err.message);
+        res.status(500).json({error: err.message});
+      });
+  });
+  router.get("/:id", (req, res) => {
+    const id = req.params.id;
+    getrecipesBycategory(id).then(data => {
       res.json(data);
     })
       .catch(err => {
