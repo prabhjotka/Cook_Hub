@@ -22,7 +22,7 @@ export default function App() {
           <Route path="/" element={<Home />} /> */}
           <Route path="/categories" element={<CategoriesList categories={categories} getCategoryId={getCategoryId}/>} />
           <Route path="/recipes" element={<RecipeList recipes={recipes} />} />
-          <Route path="/recipes/:categoryId" element={<CategorywiseRecipeList categoryRecipes={categoryRecipes} />}  />
+          <Route path="/category/:categoryId" element={<CategorywiseRecipeList categoryRecipes={categoryRecipes} />}  />
         </Routes>
       
       </BrowserRouter>

@@ -3,12 +3,13 @@
 import React from 'react';
 
 function CategorywiseRecipeItem(props) {
+ 
   const { name, description, instructions, nutritional_information, image_url} = props.categoryRecipe;
-console.log(image_url);
+  const imageUrl = `/${image_url}`;
   return (
     <div className="col">
       <div className="card border-light mb-3">
-        <div style={{height:"400px", overflow:'hidden'}}><img src={image_url} className="card-img-top" alt={name} /></div>
+        <div style={{height:"400px", overflow:'hidden'}}><img src={imageUrl} className="card-img-top" alt={name} /></div>
         
         <div className="card-body">
           <h5 className="card-title">{name}</h5>
