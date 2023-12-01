@@ -1,12 +1,13 @@
 import {useState} from 'react';
 import CategoriesList from './components/CategoriesList';
+import RecipeList from './components/RecipeList';
 import {BrowserRouter, Link, Routes, Route} from 'react-router-dom';
 import useApplicationData from './hooks/useApplicationData';
 import NavBar from './components/NavBar';
 import './App.css';
 
 export default function App() {
-  const {categories, error,  fetchItems} = useApplicationData();
+  const {categories,  recipes,error,  fetchItems} = useApplicationData();
 
   return (
     <div className="App">
@@ -15,14 +16,14 @@ export default function App() {
         <NavBar />
 
         <Routes>
-       
-          {/* <Route path="/" element={<Home />} /> */}
-          <Route path="/recipes" element={<CategoriesList categories={categories} />} />
-
+{/*        
+          <Route path="/" element={<Home />} /> */}
+          <Route path="/categories" element={<CategoriesList categories={categories} />} />
+          <Route path="/recipes" element={<RecipeList recipes={recipes} />} />
         </Routes>
       
       </BrowserRouter>
-      {/* <CategoriesList categories={categories}/> */}
+     
       
     </div>
   );

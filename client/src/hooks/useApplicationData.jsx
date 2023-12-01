@@ -3,14 +3,14 @@ import {useCallback, useEffect, useState} from "react";
 
 const useApplicationData = function() {
   const [error, setError] = useState();
-  const [recipes, setSRecipes] = useState({});
+  const [recipes, setRecipes] = useState({});
   const [categories, setCategories] = useState([]);
 
   const fetchItems = useCallback(() => {
     Promise.all([axios.get('/api/categories'), axios.get('/api/recipes')])
       .then(all => {
         setCategories(all[0].data);
-       // setData(all[1].data);
+        setRecipes(all[1].data);
       })
       .catch(err => {
         console.log(err.message);
@@ -49,7 +49,7 @@ const useApplicationData = function() {
   //   setData(data.filter(item => item.id !== id));
   // };
 
-  return { error, categories, fetchItems};
+  return { error, categories,recipes, fetchItems};
 };
 
 export default useApplicationData;
