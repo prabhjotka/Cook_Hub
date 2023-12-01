@@ -39,8 +39,9 @@ const NavBar = () => {
               className="me-2"
               aria-label="Search"
             />
+            </Form>
             <Button variant="outline-success">Search</Button>
-          </Form>
+          
         </Navbar.Collapse>
       </div>
     </Navbar>
