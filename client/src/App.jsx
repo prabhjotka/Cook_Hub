@@ -3,6 +3,17 @@ import DataList from './components/DataList';
 import Status from './components/Status';
 import useApplicationData from './hooks/useApplicationData';
 import './App.css';
+import React from 'react';
+import Login from './Login';
+
+function App() {
+  return (
+    <div className="App">
+      <Login />
+    </div>
+  );
+}
+
 
 export default function App() {
   const [text, setText] = useState("");
