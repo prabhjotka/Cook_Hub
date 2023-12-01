@@ -5,6 +5,7 @@ import CategorywiseRecipeList from './components/CategorywiseRecipeList';
 import {BrowserRouter, Link, Routes, Route} from 'react-router-dom';
 import useApplicationData from './hooks/useApplicationData';
 import NavBar from './components/NavBar';
+import AddNewRecipe from './components/AddNewRecipe';
 import './App.css';
 
 
@@ -16,7 +17,7 @@ export default function App() {
     
     <BrowserRouter>
         <NavBar />
-
+        <AddNewRecipe />
         <Routes>
 {/*        
           <Route path="/" element={<Home />} /> */}
