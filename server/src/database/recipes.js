@@ -3,7 +3,7 @@ const {Pool} = require("pg");
 module.exports = function(pool) {
 
   const getrecipes = function() {
-    const sql = "select * from Recipes order by id ";
+    const sql = "select * from Recipes order by id  desc";
 
     return pool.query(sql)
       .then(res => {
@@ -11,6 +11,15 @@ module.exports = function(pool) {
       });
   };
 
+
+  const getrecipesBycategory = function(id) {
+   const sql = "select * from Recipes where category_id=($1)";
+    return pool.query(sql,[id])
+      .then(res => {
+        return res.rows;
+      });
+  };
+  
   const addrecipes = function({ name, description, instructions, nutritional_information, image_url, category_id, user_id }) {
     const sql = `insert into Recipes
      ({ name, description, instructions, nutritional_information, image_url, category_id, user_id }) 
@@ -32,6 +41,6 @@ module.exports = function(pool) {
       });
   };
 
-  return {getrecipes, addrecipes, deleterecipes};
+  return {getrecipes, addrecipes, deleterecipes,getrecipesBycategory};
 
 };
