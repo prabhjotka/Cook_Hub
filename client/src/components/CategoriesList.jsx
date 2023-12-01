@@ -8,6 +8,7 @@ function CategoriesList(props) {
     return <CategoriesListItem
       key={category.id}
       category={category}
+      getCategoryId={props.getCategoryId}
        />;
   });
 

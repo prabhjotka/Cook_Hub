@@ -1,20 +1,15 @@
-// import { useState } from 'react';
-// import DataList from './components/DataList';
-// import Status from './components/Status';
-// import useApplicationData from './hooks/useApplicationData';
+import {useState} from 'react';
+import CategoriesList from './components/CategoriesList';
+import RecipeList from './components/RecipeList';
+import CategorywiseRecipeList from './components/CategorywiseRecipeList';
+import {BrowserRouter, Link, Routes, Route} from 'react-router-dom';
+import useApplicationData from './hooks/useApplicationData';
+import NavBar from './components/NavBar';
 import './App.css';
-import React from 'react';
-import { BrowserRouter, Link, Routes, Route } from 'react-router-dom';
-import TopNavigationBar from './components/TopNavigationBar'; // Adjust the path as needed
-import HomePage from './components/HomePage';
 
-// export default function App() {
-//   const [text, setText] = useState("");
-//   const {status, error, data, addItem, deleteItem, fetchItems} = useApplicationData();
 
-//   const addFriend = function() {
-//     addItem(text);
-//   };
+export default function App() {
+  const {categories,  recipes,error,categoryRecipes,  fetchItems,getCategoryId} = useApplicationData();
 
 //   return (
 //     <div className="App">
@@ -35,17 +30,21 @@ const FavoriteRecipes = () => <div>Favorite Recipes Page Content</div>;
 const App = () => {
   return (
     <div className="App">
-      <BrowserRouter>
-        <TopNavigationBar />
-        <HomePage />
-        
-        <Routes>
-          <Route path="/" exact component={HomePage} />
-          <Route path="/all-recipes" component={AllRecipes} />
-          <Route path="/favorite-recipes" component={FavoriteRecipes} />
-        </Routes>
+    
+    <BrowserRouter>
+        <NavBar />
 
+        <Routes>
+{/*        
+          <Route path="/" element={<Home />} /> */}
+          <Route path="/categories" element={<CategoriesList categories={categories} getCategoryId={getCategoryId}/>} />
+          <Route path="/recipes" element={<RecipeList recipes={recipes} />} />
+          <Route path="/category/:categoryId" element={<CategorywiseRecipeList categoryRecipes={categoryRecipes} />}  />
+        </Routes>
+      
       </BrowserRouter>
+     
+      
     </div>
   );
 };
