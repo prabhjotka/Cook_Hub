@@ -6,6 +6,7 @@ const useApplicationData = function() {
   const [recipes, setRecipes] = useState({});
   const [categories, setCategories] = useState([]);
   const [categoryRecipes, setCategoryRecipes] = useState({});
+  
 
   const fetchItems = useCallback(() => {
     Promise.all([axios.get('/api/categories'),
@@ -39,7 +40,23 @@ const getCategoryId=function(id)
   });
   
 }
+const searchRecipe =function(name)
+{
+  axios.get(`/api/recipes/search_recipe?search=${name}`)
+  .then(res => {
+   setRecipes((prevRecipes)=>({
+    ... prevRecipes,
+    searchResults:res.data,
+   }));
+   
+    
+  })
+  .catch((err) => {
+    setError("hello",err.message);
+  });
   
+}
+
   // const addItem = function(name) {
   //   axios.post("/api/items", {name})
   //     .then(res => {
@@ -63,7 +80,7 @@ const getCategoryId=function(id)
   //   setData(data.filter(item => item.id !== id));
   // };
  
-  return { error, categories,recipes,categoryRecipes, fetchItems,getCategoryId};
+  return { error, categories,recipes,categoryRecipes,searchResults: recipes.searchResults,searchRecipe, fetchItems,getCategoryId};
 };
 
 export default useApplicationData;

@@ -5,8 +5,24 @@ import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import { useNavigate } from 'react-router-dom';
 
-const NavBar = () => {
+const NavBar = (props) => {
+  const navigate=useNavigate();
+  const handleChange = (event) => {
+   
+   props.searchRecipe(event.target.value);
+  };
+  const navigateTosearchPage=function(event)
+  {
+    if (event.key === 'Enter') {
+      event.preventDefault();
+      props.searchRecipe(event.target.value);
+      navigate(`/recipes`)
+    }
+  
+
+  }
   return (
     <Navbar bg="dark" data-bs-theme="dark" sticky="top">
 
@@ -35,13 +51,15 @@ const NavBar = () => {
           <Form className="d-flex">
             <Form.Control
               type="search"
-              placeholder="Search"
               className="me-2"
+              name="search"
+              id="search"
               aria-label="Search"
+              onChange={handleChange}
+              onKeyDown={navigateTosearchPage}
             />
             </Form>
-            <Button variant="outline-success">Search</Button>
-          
+  
         </Navbar.Collapse>
       </div>
     </Navbar>
