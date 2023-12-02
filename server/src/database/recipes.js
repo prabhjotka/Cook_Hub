@@ -1,4 +1,4 @@
-const {Pool} = require("pg");
+const { Pool } = require("pg");
 
 module.exports = function(pool) {
 
@@ -13,13 +13,23 @@ module.exports = function(pool) {
 
 
   const getrecipesBycategory = function(id) {
-   const sql = "select * from Recipes where category_id=($1)";
-    return pool.query(sql,[id])
+    const sql = "select * from Recipes where category_id=($1)";
+    return pool.query(sql, [id])
       .then(res => {
         return res.rows;
       });
   };
-  
+
+  const getrecipesByname = function(name) {
+    const searchName = name.search;
+    const cleanSearch = `%${searchName.replace(/\s/g, '')}%`;
+    const sql = `SELECT * FROM Recipes WHERE REPLACE(name, ' ', '') ILIKE $1`
+    return pool.query(sql, [cleanSearch])
+      .then(res => {
+        return res.rows;
+      });
+  };
+
   const addrecipes = function({ name, description, instructions, nutritional_information, image_url, category_id, user_id }) {
     const sql = `insert into Recipes
      ({ name, description, instructions, nutritional_information, image_url, category_id, user_id }) 
@@ -41,6 +51,6 @@ module.exports = function(pool) {
       });
   };
 
-  return {getrecipes, addrecipes, deleterecipes,getrecipesBycategory};
+  return { getrecipes, addrecipes, deleterecipes, getrecipesBycategory, getrecipesByname };
 
 };

@@ -1,12 +1,34 @@
 
-import React from 'react';
+import React, { useState,useRef } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
+import { useNavigate } from 'react-router-dom';
 
-const NavBar = () => {
+const NavBar = (props) => {
+
+  const [searchvalue,setSearchValue]=useState('');
+  const navigate=useNavigate();
+  const formRef = useRef(null);
+  const handleChange = (event) => {
+    setSearchValue(event.target.value)
+   props.searchRecipe(searchvalue);
+  }
+  const navigateTosearchPage=function(event)
+  {
+    if (event.key === 'Enter') {
+      event.preventDefault();
+      props.searchRecipe(searchvalue);
+      navigate(`/search`);    
+    }   
+
+  }
+  const handleMenu=function()
+  {
+    setSearchValue('');
+    formRef.current.reset();
+  }
   return (
     <Navbar bg="dark" data-bs-theme="dark" sticky="top">
 
@@ -19,28 +41,32 @@ const NavBar = () => {
 
         <Navbar.Collapse id="navbarNav">
           <Nav className="ms-auto">
-            <Nav.Link as={Link} to="/">
+            <Nav.Link as={Link} to="/" onClick={handleMenu}>
               Home
             </Nav.Link>
-            <Nav.Link as={Link} to="/recipes">
+            <Nav.Link as={Link} to="/recipes"  onClick={handleMenu}>
               All Recipes
             </Nav.Link>
-            <Nav.Link as={Link} to="/categories">
-              All Categories
+            <Nav.Link as={Link} to="/categories"  onClick={handleMenu}>
+             Categories
             </Nav.Link>
-            <Nav.Link as={Link} to="/login">
+            <Nav.Link as={Link} to="/login"  onClick={handleMenu}>
               Login
             </Nav.Link>
           </Nav>
-          <Form className="d-flex">
+          <Form className="d-flex" ref={formRef}>
             <Form.Control
               type="search"
-              placeholder="Search"
               className="me-2"
+              name="search"
+              id="search"
               aria-label="Search"
+              placeholder='Search recipe'
+              onChange={handleChange}
+              onKeyDown={navigateTosearchPage}
             />
-            <Button variant="outline-success">Search</Button>
-          </Form>
+            </Form>
+  
         </Navbar.Collapse>
       </div>
     </Navbar>
