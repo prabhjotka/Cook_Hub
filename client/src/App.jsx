@@ -7,6 +7,7 @@ import useApplicationData from './hooks/useApplicationData';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import SearchRecipe from './components/SearchRecipe';
+import AddNewRecipe from './components/AddNewRecipe';
 import './App.css';
 
 
@@ -18,7 +19,7 @@ export default function App() {
     
     <BrowserRouter>
         <NavBar  searchRecipe={searchRecipe}/>
-
+        <AddNewRecipe />
         <Routes>
        
           {/* <Route path="/" element={<Home />} />  */}
