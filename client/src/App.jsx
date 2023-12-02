@@ -22,10 +22,12 @@ export default function App() {
         <Routes>
        
           {/* <Route path="/" element={<Home />} />  */}
+          {/* <Route path="/login" element={<Login />} />  */}
           <Route path="/categories" element={<CategoriesList categories={categories} getCategoryId={getCategoryId}/>} />
           <Route path="/recipes" element={<RecipeList  recipes={recipes }/>} />
           <Route path="/category/:categoryId" element={<CategorywiseRecipeList categoryRecipes={categoryRecipes} />}  />
           <Route path="/search" element={<SearchRecipe recipes={searchResults} />} />
+
         </Routes>
       <Footer/>
       </BrowserRouter>
