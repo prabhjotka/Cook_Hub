@@ -6,7 +6,6 @@ const useApplicationData = function() {
   const [recipes, setRecipes] = useState({});
   const [categories, setCategories] = useState([]);
   const [categoryRecipes, setCategoryRecipes] = useState({});
-  const [isSearching, setIsSearching] = useState(false);
   const [searchResults, setSearchResults] = useState([]);
   
 
@@ -46,7 +45,6 @@ const getCategoryId=function(id)
 const searchRecipe = function (name) {
   axios.get(`/api/recipes/search_recipe?search=${name}`)
     .then(res => {
-      setIsSearching(true);
       setSearchResults(res.data);
     })
     .catch((err) => {
@@ -77,7 +75,7 @@ const searchRecipe = function (name) {
   //   setData(data.filter(item => item.id !== id));
   // };
  
-  return { error, categories,recipes,categoryRecipes,isSearching,searchResults,searchRecipe, fetchItems,getCategoryId};
+  return { error, categories,recipes,categoryRecipes,searchResults,searchRecipe, fetchItems,getCategoryId};
 };
 
 export default useApplicationData;

@@ -17,7 +17,7 @@ const NavBar = (props) => {
     if (event.key === 'Enter') {
       event.preventDefault();
       props.searchRecipe(event.target.value);
-      navigate(`/recipes`)
+      navigate(`/search`)
     }  
 
   }
@@ -40,7 +40,7 @@ const NavBar = (props) => {
               All Recipes
             </Nav.Link>
             <Nav.Link as={Link} to="/categories">
-              All Categories
+             Categories
             </Nav.Link>
             <Nav.Link as={Link} to="/login">
               Login
