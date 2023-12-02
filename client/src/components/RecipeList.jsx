@@ -3,7 +3,6 @@ import RecipeListItem from './RecipeListItem'
 
 function RecipeList(props) {
   const recipes= Object.values(props.recipes) || [];
-
   const list = recipes.map((recipe) => {
     return <RecipeListItem
       key={recipe.id}
