@@ -23,7 +23,8 @@ CREATE TABLE Ingredients (
 CREATE TABLE Categories(
     id serial PRIMARY KEY,
     name VARCHAR(255) NOT NULL UNIQUE, 
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    image VARCHAR(255)
 );
 
 CREATE TABLE Recipes (

@@ -1,4 +1,4 @@
-// RecipeList.jsx
+
 import React from 'react';
 import RecipeListItem from "./RecipeListItem";
 

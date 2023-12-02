@@ -3,14 +3,17 @@ import {useCallback, useEffect, useState} from "react";
 
 const useApplicationData = function() {
   const [error, setError] = useState();
-  const [status, setStatus] = useState({});
-  const [data, setData] = useState([]);
+  const [recipes, setRecipes] = useState({});
+  const [categories, setCategories] = useState([]);
+  const [categoryRecipes, setCategoryRecipes] = useState({});
 
   const fetchItems = useCallback(() => {
-    Promise.all([axios.get('/api/status'), axios.get('/api/items')])
+    Promise.all([axios.get('/api/categories'),
+     axios.get('/api/recipes'), 
+    ])
       .then(all => {
-        setStatus(all[0].data);
-        setData(all[1].data);
+        setCategories(all[0].data);
+        setRecipes(all[1].data); 
       })
       .catch(err => {
         console.log(err.message);
@@ -24,31 +27,43 @@ const useApplicationData = function() {
     fetchItems();
   }, []);
 
+const getCategoryId=function(id)
+{
+  axios.get(`/api/recipes/${id}`)
+  .then(res => {
+    setCategoryRecipes(res.data);
+    
+  })
+  .catch((err) => {
+    setError("hello",err.message);
+  });
+  
+}
+  
+  // const addItem = function(name) {
+  //   axios.post("/api/items", {name})
+  //     .then(res => {
+  //       console.log(res.data);
+  //       setData([res.data, ...data]);
+  //     })
+  //     .catch((err) => {
+  //       setError(err.message);
+  //     });
+  // };
 
-  const addItem = function(name) {
-    axios.post("/api/items", {name})
-      .then(res => {
-        console.log(res.data);
-        setData([res.data, ...data]);
-      })
-      .catch((err) => {
-        setError(err.message);
-      });
-  };
+  // const deleteItem = function(id) {
+  //   axios.delete(`/api/items/${id}`)
+  //     .then(res => {
+  //       setData(data.filter(item => item.id !== id));
+  //     })
+  //     .catch((err) => {
+  //       setError(err.message);
+  //     });
 
-  const deleteItem = function(id) {
-    axios.delete(`/api/items/${id}`)
-      .then(res => {
-        setData(data.filter(item => item.id !== id));
-      })
-      .catch((err) => {
-        setError(err.message);
-      });
-
-    setData(data.filter(item => item.id !== id));
-  };
-
-  return {status, error, data, addItem, deleteItem, fetchItems};
+  //   setData(data.filter(item => item.id !== id));
+  // };
+ 
+  return { error, categories,recipes,categoryRecipes, fetchItems,getCategoryId};
 };
 
 export default useApplicationData;

@@ -1,4 +1,4 @@
-// RecipeListItem.jsx
+
 import React from 'react';
 
 class RecipeListItem extends React.Component {

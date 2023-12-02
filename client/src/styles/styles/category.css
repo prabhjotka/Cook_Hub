@@ -1,0 +1,25 @@
+.category_card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.category {
+  display: flex;
+  margin: 24px;
+  padding: 16px 16px;
+  border-width: 0.5px;
+  border-color: lightgray;
+  border-style: solid;
+  border-radius: 8px;
+  max-width: fit-content;
+
+}
+
+.category-img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  /* Optional: Add border-radius to images */
+}

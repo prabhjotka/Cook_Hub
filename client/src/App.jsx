@@ -1,7 +1,10 @@
 import {useState} from 'react';
-import DataList from './components/DataList';
-import Status from './components/Status';
+import CategoriesList from './components/CategoriesList';
+import RecipeList from './components/RecipeList';
+import CategorywiseRecipeList from './components/CategorywiseRecipeList';
+import {BrowserRouter, Link, Routes, Route} from 'react-router-dom';
 import useApplicationData from './hooks/useApplicationData';
+import NavBar from './components/NavBar';
 import './App.css';
 import React from 'react';
 import Login from './Login';
@@ -15,25 +18,27 @@ function App() {
 }
 
 
-export default function App() {
-  const [text, setText] = useState("");
-  const {status, error, data, addItem, deleteItem, fetchItems} = useApplicationData();
 
-  const addFriend = function() {
-    addItem(text);
-  };
+export default function App() {
+  const {categories,  recipes,error,categoryRecipes,  fetchItems,getCategoryId} = useApplicationData();
 
   return (
     <div className="App">
-      <h1>My Anything List</h1>
+    
+    <BrowserRouter>
+        <NavBar />
 
-      <Status status={status} error={error} />
-
-      <button onClick={fetchItems}>Reload</button>
-      <input type="text" value={text} onChange={e => setText(e.target.value)} />
-      <button onClick={addFriend}>Add</button>
-
-      <DataList friends={data} deleteItem={deleteItem} />
+        <Routes>
+{/*        
+          <Route path="/" element={<Home />} /> */}
+          <Route path="/categories" element={<CategoriesList categories={categories} getCategoryId={getCategoryId}/>} />
+          <Route path="/recipes" element={<RecipeList recipes={recipes} />} />
+          <Route path="/category/:categoryId" element={<CategorywiseRecipeList categoryRecipes={categoryRecipes} />}  />
+        </Routes>
+      
+      </BrowserRouter>
+     
+      
     </div>
   );
 }

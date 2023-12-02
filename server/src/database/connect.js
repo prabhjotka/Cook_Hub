@@ -1,3 +1,4 @@
+
 const { Pool } = require("pg");
 const config = {
   host: process.env.DB_HOST,
@@ -5,9 +6,10 @@ const config = {
   password: process.env.DB_PASS,
   database: process.env.DB_NAME
 };
+console.log("Database Config:", config);
 // Strip password from config for logging
 const { password, ...conf } = config;
-console.log("Database Config:", conf);
+
 const pool = new Pool(config);
 
 pool.connect()
