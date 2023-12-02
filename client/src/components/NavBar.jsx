@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
 import { useNavigate } from 'react-router-dom';
 
 const NavBar = (props) => {
@@ -19,8 +18,7 @@ const NavBar = (props) => {
       event.preventDefault();
       props.searchRecipe(event.target.value);
       navigate(`/recipes`)
-    }
-  
+    }  
 
   }
   return (
@@ -55,6 +53,7 @@ const NavBar = (props) => {
               name="search"
               id="search"
               aria-label="Search"
+              placeholder='Search recipe'
               onChange={handleChange}
               onKeyDown={navigateTosearchPage}
             />
