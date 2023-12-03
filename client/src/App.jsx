@@ -9,6 +9,7 @@ import Footer from './components/Footer';
 import SearchRecipe from './components/SearchRecipe';
 import AddNewRecipe from './components/AddNewRecipe';
 import './App.css';
+import Login from './components/Login';
 
 
 export default function App() {
@@ -21,7 +22,7 @@ export default function App() {
         <NavBar  searchRecipe={searchRecipe}/>
         
         <Routes>
-       
+          <Route path="/login" element={<Login/>}/>
           <Route path="/addRecipe" element={<AddNewRecipe categories={categories} addItem={addItem}/>} /> 
           <Route path="/categories" element={<CategoriesList categories={categories} getCategoryId={getCategoryId}/>} />
           <Route path="/recipes" element={<RecipeList  recipes={recipes }/>} />
