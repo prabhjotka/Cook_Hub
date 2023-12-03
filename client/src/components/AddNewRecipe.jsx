@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Col from 'react-bootstrap/Col';
@@ -6,50 +7,99 @@ import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import '../styles/styles/addRecipe.css';
 
-function AddNewRecipe() {
+function AddNewRecipe(props) {
+  const categories = props.categories || [];
+
+  const [state, setState] = useState({
+    recipeName: "",
+    category: "",
+    ingredients: "",
+    img: "",
+    details: ""
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setState((prevState) => ({ ...prevState, [name]: value }));
+  };
+
   return (
     <div className="addRecipe">
-      <Form.Label htmlFor="basic-url">Add a new recipe!</Form.Label>
+      <h2 className="mb-4">Add a New Recipe!</h2>
 
-      <Row className="g-2">
+      <Row className="mb-3">
         <Col md>
           <FloatingLabel controlId="floatingInputGrid" label="Recipe Title">
-            <Form.Control as="textarea" />
+            <Form.Control
+              type="text"
+              placeholder="Enter Recipe Title"
+              name="recipeName"
+              value={state.recipeName}
+              onChange={handleChange}
+            />
           </FloatingLabel>
         </Col>
         <Col md>
-          <FloatingLabel
-            controlId="floatingSelectGrid"
-            label="Recipe Category"
-          >
-            <Form.Select aria-label="Floating label select example">
+          <FloatingLabel controlId="floatingSelectGrid" label="Recipe Category">
+            <Form.Select
+              aria-label="Recipe Category"
+              name="category"
+              value={state.category}
+              onChange={handleChange}
+            >
               <option>Select category</option>
-              <option value="1">Breakfast</option>
-              <option value="2">Salads</option>
-              <option value="3">Main Dishes</option>
-              <option value="3">Desserts</option>
-              <option value="3">Drinks</option>
+              {categories.map((category) => (
+                <option key={category.id} 
+                value={category.name}>
+                  {category.name}
+                </option>
+              ))}
             </Form.Select>
           </FloatingLabel>
         </Col>
       </Row>
 
-      <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1" label="Recipe Title">
+      <Form.Group className="mb-3" controlId="formIngredients">
         <Form.Label>Ingredients</Form.Label>
-        <Form.Control as="textarea" placeholder="Ingredient List" rows={3} />
+        <Form.Control
+          as="textarea"
+          placeholder="Enter Ingredient List"
+          rows={3}
+          name="ingredients"
+          value={state.ingredients}
+          onChange={handleChange}
+        />
       </Form.Group>
 
-      <Form.Group controlId="formFile" className="mb-3">
+      <Form.Group className="mb-3" controlId="formImage">
         <Form.Label>Image Path</Form.Label>
-        <Form.Control type="file" />
+        <InputGroup>
+          <Form.Control
+            type="text"
+            placeholder="Enter Image Path"
+            name="img"
+            value={state.img}
+            onChange={handleChange}
+          />
+          <Button variant="secondary" id="button-addon2">
+            Browse
+          </Button>
+        </InputGroup>
       </Form.Group>
 
-      <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+      <Form.Group className="mb-3" controlId="formRecipe">
         <Form.Label>Recipe</Form.Label>
-        <Form.Control as="textarea" placeholder="Detailed recipe goes here" rows={3} />
+        <Form.Control
+          as="textarea"
+          placeholder="Enter Detailed Recipe"
+          rows={5}
+          name="details"
+          value={state.details}
+          onChange={handleChange}
+        />
       </Form.Group>
 
-      <Button variant="outline-secondary" id="button-addon1">
+      <Button variant="primary" id="submitBtn">
         Submit
       </Button>
     </div>

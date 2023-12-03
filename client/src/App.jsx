@@ -19,10 +19,10 @@ export default function App() {
     
     <BrowserRouter>
         <NavBar  searchRecipe={searchRecipe}/>
-        <AddNewRecipe />
+        
         <Routes>
        
-          {/* <Route path="/" element={<Home />} />  */}
+          <Route path="/addRecipe" element={<AddNewRecipe categories={categories}/>} /> 
           <Route path="/categories" element={<CategoriesList categories={categories} getCategoryId={getCategoryId}/>} />
           <Route path="/recipes" element={<RecipeList  recipes={recipes }/>} />
           <Route path="/category/:categoryId" element={<CategorywiseRecipeList categoryRecipes={categoryRecipes} />}  />

@@ -3,9 +3,9 @@ const { Pool } = require("pg");
 module.exports = function(pool) {
 
   const getrecipes = function() {
-    const sql = "select * from Recipes order by id  desc";
-
-    return pool.query(sql)
+  const sql = "select * from Recipes  order by id  desc";
+  
+       return pool.query(sql)
       .then(res => {
         return res.rows;
       });

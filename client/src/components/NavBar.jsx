@@ -53,6 +53,9 @@ const NavBar = (props) => {
             <Nav.Link as={Link} to="/login"  onClick={handleMenu}>
               Login
             </Nav.Link>
+            <Nav.Link as={Link} to="/addRecipe"  onClick={handleMenu}>
+             Add New Recipe
+            </Nav.Link>
           </Nav>
           <Form className="d-flex" ref={formRef}>
             <Form.Control
