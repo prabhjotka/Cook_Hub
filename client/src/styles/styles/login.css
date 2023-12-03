@@ -5,7 +5,7 @@
     max-width: 300px;
     margin: auto;
     padding: 20px;
-    border: 1px solid #ddd;
+    border: 1px solid #ff0000;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     background-color: #fff;
@@ -19,8 +19,9 @@
   /* Label styles */
   label {
     display: block;
+    font-family: 'Times New Roman', Times, serif;
     margin-bottom: 8px;
-    color: #333;
+    color: #451f1f;
   }
   
   /* Input styles */

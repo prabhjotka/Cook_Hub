@@ -1,24 +1,20 @@
-//~~LOGIN PAGE~~//
-
 import React, { useState } from 'react';
 import '../styles/styles/login.css'
-
-
 
 const Login = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-  
+
     const handleLogin = () => {
       // Add your login logic here
       console.log('Logging in with:', { username, password });
     };
-  
+
     const handleCancel = () => {
       // Add any cancel logic or redirection here
       console.log('Login cancelled');
     };
-  
+
     return (
       <div className="login-container">
         <h2>Login</h2>
@@ -32,7 +28,7 @@ const Login = () => {
               onChange={(e) => setUsername(e.target.value)}
             />
           </div>
-  
+
           <div className="form-group">
             <label htmlFor="password">Password:</label>
             <input
@@ -42,7 +38,7 @@ const Login = () => {
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
-  
+
           <div className="button-group">
             <button type="button" onClick={handleLogin}>
               Login
@@ -55,5 +51,5 @@ const Login = () => {
       </div>
     );
   };
-  
+
   export default Login;
