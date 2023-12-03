@@ -10,6 +10,7 @@ import SearchRecipe from './components/SearchRecipe';
 import AddNewRecipe from './components/AddNewRecipe';
 import HomePage from './components/HomePage';
 import './App.css';
+import Login from './components/Login';
 
 
 export default function App() {
@@ -22,7 +23,7 @@ export default function App() {
         <NavBar  searchRecipe={searchRecipe}/>
         
         <Routes>
-       
+          <Route path="/login" element={<Login/>}/>
           <Route path="/addRecipe" element={<AddNewRecipe categories={categories} addItem={addItem}/>} /> 
        
           <Route path="/" element={<HomePage />} />
