@@ -1,5 +1,3 @@
-/* Login.css */
-
 /* Container styles */
 .login-container {
     max-width: 300px;
@@ -11,19 +9,19 @@
     background-color: #fff;
     margin-top: 40px;
     transition: box-shadow 0.3s ease-in-out;
-}
-
+  }
+  
   /* Form group styles */
   .form-group {
     margin-bottom: 20px;
   }
   
-  /* h2 ele style*/
+  /* Heading styles */
   h2 {
     font-family: cursive;
     color: #000000;
   }
-
+  
   /* Label styles */
   label {
     display: block;
@@ -40,11 +38,12 @@
     box-sizing: border-box;
     border: 1px solid #ccc;
     border-radius: 4px;
+    font-family: cursive;
   }
   
   /* Button styles */
   button {
-    background-color: #931111;
+    background-color: rgb(35, 145, 1);
     color: white;
     padding: 12px 20px;
     border: none;
@@ -59,22 +58,20 @@
   
   /* Cancel button styles */
   .cancel-button {
-    background-color: #61140b;
+    background-color: rgb(35, 145, 1);
     margin-right: 10px;
+    margin-left: 10px; /* Add margin to the left */
   }
   
   .cancel-button:hover {
     background-color: #000000;
   }
-
+  
+  /* Additional styles */
   div {
-    color: rgb(0, 0, 0);
+    color: #000000;
   }
-
-  input {
-    font-family: cursive;
-  }
-
+  
   span {
     font-family: cursive;
   }
