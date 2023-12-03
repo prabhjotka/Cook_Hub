@@ -23,7 +23,6 @@ const useApplicationData = function() {
       });
   }, []);
 
-
   // Fetch data on first render
   useEffect(() => {
     fetchItems();
@@ -52,16 +51,16 @@ const searchRecipe = function (name) {
     });
 }
 
-  // const addItem = function(name) {
-  //   axios.post("/api/items", {name})
-  //     .then(res => {
-  //       console.log(res.data);
-  //       setData([res.data, ...data]);
-  //     })
-  //     .catch((err) => {
-  //       setError(err.message);
-  //     });
-  // };
+  const addItem = function(name,category_id,ingredients_list,image_url,instructions) {
+    axios.post("/api/recipes", {name,category_id,ingredients_list,image_url,instructions})
+      .then(res => {
+        console.log(res.data);
+        setData([res.data, ...data]);
+      })
+      .catch((err) => {
+        setError(err.message);
+      });
+  };
 
   // const deleteItem = function(id) {
   //   axios.delete(`/api/items/${id}`)
@@ -75,7 +74,7 @@ const searchRecipe = function (name) {
   //   setData(data.filter(item => item.id !== id));
   // };
  
-  return { error, categories,recipes,categoryRecipes,searchResults,searchRecipe, fetchItems,getCategoryId};
+  return { error, categories,recipes,categoryRecipes,searchResults,searchRecipe, fetchItems,getCategoryId,addItem};
 };
 
 export default useApplicationData;

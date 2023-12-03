@@ -2,6 +2,7 @@ import React from 'react';
 import CategoriesListItem from './CategoriesListItem';
 import '../styles/styles/category.css'
 function CategoriesList(props) {
+
   const categories = props.categories || [];
 
   const list = categories.map((category) => {

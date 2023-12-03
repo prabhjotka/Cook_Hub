@@ -5,9 +5,20 @@
   margin-right: 15%;
   font-family: fantasy;
   margin-top: 10%;
+  position: relative;
+  backdrop-filter:blur(30px);
+  background: url("Vegetable_Lasagna.jpeg") center/cover no-repeat;
+  color: #0f0d0d; /* Set text color to white or a contrasting color */
+  margin-top: 40px;
+  margin-bottom: 40px;
+
 }
 
 .g-2{
   margin-left: 20px;
   margin-bottom: 2%;
+}
+
+.blur-background{
+  backdrop-filter: blur(10px);
 }

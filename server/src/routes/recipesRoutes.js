@@ -35,11 +35,10 @@ const routes = function(pool) {
       });
   });
 
-
- 
   router.post("/", (req, res) => {
-    const { name, description, instructions, nutritional_information, image_url, category_id, user_id } = req.body;
-    addrecipes({ name, description, instructions, nutritional_information, image_url, category_id, user_id })
+    console.log(req.body);
+    const { name,category_id,ingredients_list,image_url,instructions} = req.body;
+    addrecipes({ name,category_id,ingredients_list,image_url,instructions})
     .then(data => {
       res.json(data);
     })

@@ -3,8 +3,8 @@
 ### Using Local Postgres Database
 - Open `psql`
 - `CREATE DATABASE demo` (or whatever name you want to use)
-- `\i database/database.sql`
-- `\i database/seeds.sql` (if you want to load seeds)
+- `\i server/database/database.sql`
+- `\i server/database/seeds.sql` (if you want to load seeds)
 
 ## Using Container Database (Advanced)
  - Follow `README.md` in the `postgres` dir of project root

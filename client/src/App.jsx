@@ -12,17 +12,17 @@ import './App.css';
 
 
 export default function App() {
-  const {categories,  recipes,error,categoryRecipes, searchResults,searchRecipe,getCategoryId} = useApplicationData();
+  const {categories,  recipes,error,categoryRecipes, searchResults,addItem,searchRecipe,getCategoryId} = useApplicationData();
 
   return (
     <div className="App">
     
     <BrowserRouter>
         <NavBar  searchRecipe={searchRecipe}/>
-        <AddNewRecipe />
+        
         <Routes>
        
-          {/* <Route path="/" element={<Home />} />  */}
+          <Route path="/addRecipe" element={<AddNewRecipe categories={categories} addItem={addItem}/>} /> 
           <Route path="/categories" element={<CategoriesList categories={categories} getCategoryId={getCategoryId}/>} />
           <Route path="/recipes" element={<RecipeList  recipes={recipes }/>} />
           <Route path="/category/:categoryId" element={<CategorywiseRecipeList categoryRecipes={categoryRecipes} />}  />
