@@ -69,7 +69,7 @@ function AddNewRecipe(props) {
       </Row>
 
       <Form.Group className="mb-3" controlId="formDescription">
-        <Form.Label>Description</Form.Label>
+        <Form.Label></Form.Label>
         <Form.Control
           as="textarea"
           placeholder="Enter a short description for the recipe"
@@ -81,7 +81,7 @@ function AddNewRecipe(props) {
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formIngredients">
-        <Form.Label>Ingredients</Form.Label>
+        <Form.Label></Form.Label>
         <Form.Control
           as="textarea"
           placeholder="Enter Ingredient List"
@@ -93,7 +93,7 @@ function AddNewRecipe(props) {
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formNutritionalValue">
-        <Form.Label>Nutritional Information</Form.Label>
+        <Form.Label></Form.Label>
         <Form.Control
           as="textarea"
           placeholder="Enter nutritional value of the recipe in the order as Calories, Carbs, Proteins:"
@@ -105,7 +105,7 @@ function AddNewRecipe(props) {
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formImage">
-        <Form.Label>Image Path</Form.Label>
+        <Form.Label></Form.Label>
         <InputGroup>
           <Form.Control
             type="file"
@@ -116,13 +116,13 @@ function AddNewRecipe(props) {
           />
          <Button variant="secondary" id="button-addon2"
           onClick={() => document.querySelector('[type=file]').click()}>
-          Browse
+          Browse Image
       </Button>
         </InputGroup>
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formRecipe">
-        <Form.Label>Recipe</Form.Label>
+        <Form.Label></Form.Label>
         <Form.Control
           as="textarea"
           placeholder="Enter Detailed Recipe"
