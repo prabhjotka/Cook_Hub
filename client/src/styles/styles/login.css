@@ -5,23 +5,30 @@
     max-width: 300px;
     margin: auto;
     padding: 20px;
-    border: 1px solid #ff0000;
+    border: 1px solid #0f0101;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(255, 7, 7, 0.1);
     background-color: #fff;
+    margin-top: 40px;
   }
   
   /* Form group styles */
   .form-group {
     margin-bottom: 20px;
   }
-  
+
+  /* h2 ele style*/
+  h2 {
+    font-family: 'Times New Roman', Times, serif;
+    color: #000000;
+  }
+
   /* Label styles */
   label {
     display: block;
     font-family: 'Times New Roman', Times, serif;
     margin-bottom: 8px;
-    color: #451f1f;
+    color: #000000;
   }
   
   /* Input styles */
@@ -36,7 +43,7 @@
   
   /* Button styles */
   button {
-    background-color: #4caf50;
+    background-color: #931111;
     color: white;
     padding: 12px 20px;
     border: none;
@@ -46,16 +53,20 @@
   }
   
   button:hover {
-    background-color: #45a049;
+    background-color: #000000;
   }
   
   /* Cancel button styles */
   .cancel-button {
-    background-color: #e74c3c;
+    background-color: #61140b;
     margin-right: 10px;
   }
   
   .cancel-button:hover {
-    background-color: #c0392b;
+    background-color: #000000;
+  }
+
+  div {
+    color: rgb(0, 0, 0);
   }
   
