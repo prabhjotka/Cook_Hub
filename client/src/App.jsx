@@ -8,6 +8,7 @@ import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import SearchRecipe from './components/SearchRecipe';
 import AddNewRecipe from './components/AddNewRecipe';
+import HomePage from './components/HomePage';
 import './App.css';
 
 
@@ -23,6 +24,8 @@ export default function App() {
         <Routes>
        
           <Route path="/addRecipe" element={<AddNewRecipe categories={categories} addItem={addItem}/>} /> 
+       
+          <Route path="/" element={<HomePage />} />
           <Route path="/categories" element={<CategoriesList categories={categories} getCategoryId={getCategoryId}/>} />
           <Route path="/recipes" element={<RecipeList  recipes={recipes }/>} />
           <Route path="/category/:categoryId" element={<CategorywiseRecipeList categoryRecipes={categoryRecipes} />}  />
