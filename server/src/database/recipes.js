@@ -30,17 +30,18 @@ module.exports = function(pool) {
       });
   };
 
-  const addrecipes = function({ name, category_id, ingredients_list, image_url, instructions }) {
+  const addrecipes = function({ name, category_id, description, ingredients_list, nutritional_information, image_url, instructions }) {
     const sql = `
       INSERT INTO Recipes
-      (name, category_id, ingredients_list, image_url, instructions, user_id)
-      VALUES ($1, $2, $3, $4, $5, $6)
+      (name, category_id, description, ingredients_list, nutritional_information, image_url, instructions, user_id)
+      VALUES ($1, $2, $3, $4, $5::jsonb, $6, $7, $8)
       RETURNING *`;
   
-    const values = [name, category_id, ingredients_list, image_url, instructions, 1];
+    const values = [name, category_id, description, ingredients_list, nutritional_information, image_url, instructions, 1];
   
     return pool.query(sql, values)
       .then(res => {
+        console.log('Query executed successfully:', res.rows[0]);
         return res.rows[0];
       });
   };
