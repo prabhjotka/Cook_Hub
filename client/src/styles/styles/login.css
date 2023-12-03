@@ -11,18 +11,13 @@
     background-color: #fff;
     margin-top: 40px;
     transition: box-shadow 0.3s ease-in-out;
-    box-shadow: 0 0 10px rgba(0, 0, 255, 0); /* Initial box-shadow with no glow */
-  }
-  
-  .login-container:focus-within {
-    box-shadow: 0 0 20px rgba(255, 0, 0, 0.7); /* Glow effect on focus */
-  }
-  
+}
+
   /* Form group styles */
   .form-group {
     margin-bottom: 20px;
   }
-
+  
   /* h2 ele style*/
   h2 {
     font-family: cursive;
