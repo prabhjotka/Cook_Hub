@@ -2,8 +2,8 @@ import React from 'react';
 import RecipeListItem from './RecipeListItem'
 
 function RecipeList(props) {
+  console.log("hi i an list",props)
   const recipes= Object.values(props.recipes) || [];
-
   const list = recipes.map((recipe) => {
     return <RecipeListItem
       key={recipe.id}
