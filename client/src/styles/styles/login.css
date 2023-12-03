@@ -10,6 +10,12 @@
     box-shadow: 0 0 10px rgba(255, 7, 7, 0.1);
     background-color: #fff;
     margin-top: 40px;
+    transition: box-shadow 0.3s ease-in-out;
+    box-shadow: 0 0 10px rgba(0, 0, 255, 0); /* Initial box-shadow with no glow */
+  }
+  
+  .login-container:focus-within {
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.7); /* Glow effect on focus */
   }
   
   /* Form group styles */
@@ -19,14 +25,14 @@
 
   /* h2 ele style*/
   h2 {
-    font-family: 'Times New Roman', Times, serif;
+    font-family: cursive;
     color: #000000;
   }
 
   /* Label styles */
   label {
     display: block;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: cursive;
     margin-bottom: 8px;
     color: #000000;
   }
@@ -68,5 +74,13 @@
 
   div {
     color: rgb(0, 0, 0);
+  }
+
+  input {
+    font-family: cursive;
+  }
+
+  span {
+    font-family: cursive;
   }
   
