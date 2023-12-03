@@ -13,7 +13,9 @@ function AddNewRecipe(props) {
   const [state, setState] = useState({
     name: "",
     category_id: "",
+    description: "",
     ingredients_list: "",
+    nutritional_information: "",
     image_url: "",
     instructions: ""
   });
@@ -66,6 +68,18 @@ function AddNewRecipe(props) {
         </Col>
       </Row>
 
+      <Form.Group className="mb-3" controlId="formDescription">
+        <Form.Label>Description</Form.Label>
+        <Form.Control
+          as="textarea"
+          placeholder="Enter a short description for the recipe"
+          rows={3}
+          name="description"
+          value={state.description}
+          onChange={(e) => setState({ ...state, description: e.target.value })}
+        />
+      </Form.Group>
+
       <Form.Group className="mb-3" controlId="formIngredients">
         <Form.Label>Ingredients</Form.Label>
         <Form.Control
@@ -75,6 +89,18 @@ function AddNewRecipe(props) {
           name="ingredients"
           value={state.ingredients_list}
           onChange={(e) => setState({ ...state, ingredients_list: e.target.value })}
+        />
+      </Form.Group>
+
+      <Form.Group className="mb-3" controlId="formNutritionalValue">
+        <Form.Label>Nutritional Information</Form.Label>
+        <Form.Control
+          as="textarea"
+          placeholder="Enter nutritional value of the recipe in the order as Calories, Carbs, Proteins:"
+          rows={3}
+          name="nutritional_information"
+          value={state.nutritional_information}
+          onChange={(e) => setState({ ...state, nutritional_information: e.target.value })}
         />
       </Form.Group>
 
