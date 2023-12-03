@@ -1,11 +1,11 @@
 
--- INSERT INTO Categories (id,name,image)
--- VALUES
---   (1,'Breakfast','Avocado_Toast.jpeg'),
---   (2,'Salads','Caprese_Salad.jpeg'),
---   (3,'Main Dishes','Main_dishes.jpg'),
---   (4,'Desserts','Desserts.jpg'),
---   (5,'Drinks','Drinks.jpg');
+INSERT INTO Categories (id,name,image)
+VALUES
+  (1,'Breakfast','Avocado_Toast.jpeg'),
+  (2,'Salads','Caprese_Salad.jpeg'),
+  (3,'Main Dishes','Main_dishes.jpg'),
+  (4,'Desserts','Desserts.jpg'),
+  (5,'Drinks','Drinks.jpg');
 
 
 INSERT INTO Recipes ( name, description, instructions, nutritional_information, image_url, ingredients_list,category_id, user_id)
