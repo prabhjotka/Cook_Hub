@@ -8,7 +8,7 @@ const HomePage = () => {
       <HomeCarousel/>
       
       <div style={{ textAlign: 'center', marginTop: '20px' }}>
-        <button style={{ font:'verdana', padding: '10px 20px', fontSize: '16px' }}>Get Started</button>
+        <button style={{ font:'verdana', padding: '10px 20px', fontSize: '16px', borderRadius: '15px', color: 'darkgreen', borderColor: 'darkgreen'}}>Continue As Guest</button>
       </div>
     </div>
   );
