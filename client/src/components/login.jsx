@@ -4,10 +4,10 @@ import '../styles/styles/login.css';
 const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [showPassword, setShowPassword] = useState(false); // Add this line
-
+  const [showPassword, setShowPassword] = useState(false); 
   const handleLogin = () => {
-    // Add your login logic here
+
+    //login logic here
     console.log('Logging in with:', { username, password });
   };
 
@@ -34,9 +34,9 @@ const Login = () => {
             placeholder="Enter your username"
           />
         </div>
-
+    
         <div className="form-group">
-          
+            
            <input
             type={showPassword ? 'text' : 'password'}
             id="password"
