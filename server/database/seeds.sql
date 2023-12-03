@@ -1,17 +1,17 @@
 
-INSERT INTO Categories (id,name,image)
-VALUES
-  (1,'Breakfast','Avocado_Toast.jpeg'),
-  (2,'Salads','Caprese_Salad.jpeg'),
-  (3,'Main Dishes','Main_dishes.jpg'),
-  (4,'Desserts','Desserts.jpg'),
-  (5,'Drinks','Drinks.jpg');
+-- INSERT INTO Categories (id,name,image)
+-- VALUES
+--   (1,'Breakfast','Avocado_Toast.jpeg'),
+--   (2,'Salads','Caprese_Salad.jpeg'),
+--   (3,'Main Dishes','Main_dishes.jpg'),
+--   (4,'Desserts','Desserts.jpg'),
+--   (5,'Drinks','Drinks.jpg');
 
 
-INSERT INTO Recipes (id, name, description, instructions, nutritional_information, image_url, ingredients_list,category_id, user_id)
+INSERT INTO Recipes ( name, description, instructions, nutritional_information, image_url, ingredients_list,category_id, user_id)
 VALUES
   (
-    1,
+    
     'Vegetarian Stir-Fry',
     'Colorful and flavorful vegetable stir-fry',
     'Chop and stir-fry your favorite vegetables, Add soy sauce and spices, Serve over rice.',
@@ -22,7 +22,7 @@ VALUES
     1
   ),
   (
-    2,
+    
     'Margherita Pizza',
     'Classic pizza with tomato, mozzarella, and basil',
     'Roll out pizza dough, Add tomato sauce, cheese, and fresh basil, Bake until crust is golden.',
@@ -33,7 +33,7 @@ VALUES
     1
   ),
   (
-    3,
+    
     'Avocado Toast',
     'Simple and healthy avocado toast',
     'Toast bread, Spread mashed avocado on top, Sprinkle with salt and pepper.',
@@ -44,7 +44,7 @@ VALUES
     1
   ),
   (
-    4,
+    
     'Mango Salsa Chicken',
     'Grilled chicken topped with fresh mango salsa',
     'Grill chicken breasts, Top with a mix of diced mango, red onion, cilantro, and lime juice.',
@@ -55,7 +55,7 @@ VALUES
     1
   ),
   (
-    5,
+    
     'Spicy Shrimp Tacos',
     'Tacos filled with spicy shrimp, slaw, and avocado',
     'Saute shrimp with spices., Fill tortillas with shrimp, slaw, and sliced avocado.',
@@ -66,7 +66,7 @@ VALUES
     1
   ),
   (
-    6,
+    
     'Greek Salad',
     'Fresh and tangy Greek salad with feta cheese',
     'Combine chopped cucumber, tomatoes, olives, and feta, Drizzle with olive oil and sprinkle with oregano.',
@@ -77,7 +77,7 @@ VALUES
     1
   ),
   (
-    7,
+    
     'Pineapple Fried Rice',
     'Sweet and savory fried rice with pineapple',
     'Stir-fry rice with diced pineapple, vegetables, and soy sauce, Optional: add cooked shrimp or chicken.',
@@ -88,7 +88,7 @@ VALUES
     1
   ),
   (
-    8,
+    
     'Caprese Salad',
     'Classic Italian salad with tomatoes, mozzarella, and basil',
     'Slice tomatoes and mozzarella. Arrange on a plate with fresh basil. Drizzle with balsamic glaze.',
@@ -99,7 +99,7 @@ VALUES
     1
   ),
   (
-    9,
+    
     'Sushi Rolls',
     'Homemade sushi rolls with your favorite fillings',
     'Roll sushi with rice, seaweed, and your choice of fillings, Serve with soy sauce and pickled ginger.',
@@ -110,7 +110,7 @@ VALUES
     1
   ),
   (
-    10,
+    
     'Mushroom Risotto',
     'Creamy and comforting mushroom risotto',
     'Saute mushrooms and onions. Cook Arborio rice with broth until creamy, Finish with Parmesan cheese.',
@@ -121,7 +121,7 @@ VALUES
     1
   ),
   (
-    11,
+    
     'Fruit Smoothie Bowl',
     'Healthy and colorful fruit smoothie bowl',
     'Blend your favorite fruits with yogurt., Top with granola, nuts, and fresh berries.',
@@ -132,7 +132,7 @@ VALUES
     1
   ),
   (
-    12,
+    
     'BBQ Pulled Pork Sandwich',
     'Slow-cooked pulled pork in barbecue sauce',
     'Cook pork shoulder in slow cooker, Shred and mix with barbecue sauce, Serve in a bun.',
@@ -143,7 +143,7 @@ VALUES
     1
   ),
   (
-    13,
+    
     'Cauliflower Crust Pizza',
     'Low-carb pizza with cauliflower crust',
     'Make crust with cauliflower, cheese, and egg, Add your favorite toppings, Bake until crispy.',
@@ -154,7 +154,7 @@ VALUES
     1
   ),
   (
-    14,
+  
     'Lemon Garlic Butter Shrimp',
     'Quick and flavorful lemon garlic butter shrimp',
     'Saute shrimp in garlic and butter, Squeeze fresh lemon juice, Garnish with parsley.',
@@ -165,7 +165,7 @@ VALUES
     1
   ),
   (
-    15,
+    
     'Quinoa Salad',
     'Nutrient-packed quinoa salad with vegetables',
     'Cook quinoa, Toss with diced cucumber, cherry tomatoes, and feta, Drizzle with olive oil.',
@@ -176,7 +176,7 @@ VALUES
     1
   ),
   (
-    16,
+  
     'Chicken Caesar Wrap',
     'Grilled chicken, romaine lettuce, and Caesar dressing in a wrap',
     'Grill chicken, Wrap with romaine lettuce and Caesar dressing in a tortilla.',
@@ -187,7 +187,7 @@ VALUES
     1
   ),
   (
-    17,
+  
     'Vegetable Lasagna',
     'Layered vegetable lasagna with marinara sauce and cheese',
     'Layer lasagna noodles with marinara sauce, vegetables, and cheese, Bake until bubbly.',
@@ -198,7 +198,7 @@ VALUES
     1
   ),
   (
-    18,
+  
     'Peach Cobbler',
     'Sweet and juicy peach cobbler with a golden crust',
     'Mix peaches with sugar and spices, Top with a buttery biscuit crust, Bake until golden brown.',
@@ -209,7 +209,7 @@ VALUES
     1
   ),
   (
-    19,
+  
     'Teriyaki Salmon',
     'Grilled teriyaki-glazed salmon fillets',
     'Marinate salmon in teriyaki sauce, Grill until fish flakes easily with a fork.',
@@ -220,7 +220,7 @@ VALUES
     1
   ),
   (
-    20,
+  
     'Chocolate Avocado Mousse',
     'Rich and creamy chocolate mousse made with avocados',
     'Blend avocados, cocoa powder, and sweetener until smooth, Chill before serving.',

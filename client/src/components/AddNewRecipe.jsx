@@ -9,20 +9,29 @@ import '../styles/styles/addRecipe.css';
 
 function AddNewRecipe(props) {
   const categories = props.categories || [];
-
+ 
   const [state, setState] = useState({
-    recipeName: "",
-    category: "",
-    ingredients: "",
-    img: "",
-    details: ""
+    name: "",
+    category_id: "",
+    ingredients_list: "",
+    image_url: "",
+    instructions: ""
   });
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setState((prevState) => ({ ...prevState, [name]: value }));
+    const { name, value, files } = e.target;
+    if (name === 'img' && files && files.length > 0) {
+      const imageUrl = URL.createObjectURL(files[0]);
+      setState((prevState) => ({ ...prevState, image_url: imageUrl }));
+    } else {
+      setState((prevState) => ({ ...prevState, [name]: value }));
+    }
   };
 
+  const handleSubmit=function(e)
+  {e.preventDefault();
+    props.addItem(state.name,state.category_id,state.ingredients_list,state.image_url,state.instructions);
+  }
   return (
     <div className="addRecipe">
       <h2 className="mb-4">Add a New Recipe!</h2>
@@ -34,9 +43,8 @@ function AddNewRecipe(props) {
               type="text"
               placeholder="Enter Recipe Title"
               name="recipeName"
-              value={state.recipeName}
-              onChange={handleChange}
-            />
+              value={state.name}
+              onChange={(e) => setState({ ...state, name: e.target.value })}/>
           </FloatingLabel>
         </Col>
         <Col md>
@@ -44,13 +52,12 @@ function AddNewRecipe(props) {
             <Form.Select
               aria-label="Recipe Category"
               name="category"
-              value={state.category}
-              onChange={handleChange}
-            >
+              value={state.category_id}
+              onChange={(e) => setState({ ...state, category_id: e.target.value })}>
               <option>Select category</option>
               {categories.map((category) => (
                 <option key={category.id} 
-                value={category.name}>
+                value={category.id}>
                   {category.name}
                 </option>
               ))}
@@ -66,8 +73,8 @@ function AddNewRecipe(props) {
           placeholder="Enter Ingredient List"
           rows={3}
           name="ingredients"
-          value={state.ingredients}
-          onChange={handleChange}
+          value={state.ingredients_list}
+          onChange={(e) => setState({ ...state, ingredients_list: e.target.value })}
         />
       </Form.Group>
 
@@ -75,15 +82,16 @@ function AddNewRecipe(props) {
         <Form.Label>Image Path</Form.Label>
         <InputGroup>
           <Form.Control
-            type="text"
+            type="file"
             placeholder="Enter Image Path"
+            multiple accept='image/*'
             name="img"
-            value={state.img}
-            onChange={handleChange}
+           onChange={handleChange}
           />
-          <Button variant="secondary" id="button-addon2">
-            Browse
-          </Button>
+         <Button variant="secondary" id="button-addon2"
+          onClick={() => document.querySelector('[type=file]').click()}>
+          Browse
+      </Button>
         </InputGroup>
       </Form.Group>
 
@@ -93,13 +101,13 @@ function AddNewRecipe(props) {
           as="textarea"
           placeholder="Enter Detailed Recipe"
           rows={5}
-          name="details"
-          value={state.details}
-          onChange={handleChange}
+          name="instructions"
+          value={state.instructions}
+          onChange={(e) => setState({ ...state, instructions: e.target.value })}
         />
       </Form.Group>
 
-      <Button variant="primary" id="submitBtn">
+      <Button variant="primary" id="submitBtn" onClick={handleSubmit}>
         Submit
       </Button>
     </div>

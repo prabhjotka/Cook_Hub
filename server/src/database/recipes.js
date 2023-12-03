@@ -30,17 +30,21 @@ module.exports = function(pool) {
       });
   };
 
-  const addrecipes = function({ name, description, instructions, nutritional_information, image_url, category_id, user_id }) {
-    const sql = `insert into Recipes
-     ({ name, description, instructions, nutritional_information, image_url, category_id, user_id }) 
-    values ($1,$2,$3,$4,$5,$6,$7) returning *`;
-
-    const values = [name, description, instructions, nutritional_information, image_url, category_id, user_id];
+  const addrecipes = function({ name, category_id, ingredients_list, image_url, instructions }) {
+    const sql = `
+      INSERT INTO Recipes
+      (name, category_id, ingredients_list, image_url, instructions, user_id)
+      VALUES ($1, $2, $3, $4, $5, $6)
+      RETURNING *`;
+  
+    const values = [name, category_id, ingredients_list, image_url, instructions, 1];
+  
     return pool.query(sql, values)
       .then(res => {
         return res.rows[0];
       });
   };
+  
 
   const deleterecipes = function(id) {
     const sql = 'delete from Recipes where id=($1) returning *';

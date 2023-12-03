@@ -13,7 +13,8 @@ function RecipeListItem(props) {
 
         <div className="card-body">
           <h5 className="card-title">{name}</h5>
-          <p className="card-text">{description}</p>
+
+          {description && (<p className="card-text">{description}</p>)}
           <ul className="list-group">
             <li className="list-group-item">
               <strong>Instructions:</strong> {instructions}
@@ -21,12 +22,12 @@ function RecipeListItem(props) {
             <li className="list-group-item">
               <strong>Ingredients:</strong> {ingredients_list}
             </li>
-            <li className="list-group-item">
+            { nutritional_information && (<li className="list-group-item">
               <strong>Nutritional Information:</strong>
               <p>Carbs:  {nutritional_information.carbs}</p>
               <p>Calories:{nutritional_information.calories}</p>
               <p>Protein:{nutritional_information.protein}</p>
-            </li>
+            </li>)}
           </ul>
         </div>
       </div>
