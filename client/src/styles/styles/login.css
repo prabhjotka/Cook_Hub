@@ -59,7 +59,6 @@
   /* Cancel button styles */
   .cancel-button {
     background-color: rgb(35, 145, 1);
-    margin-right: 10px;
     margin-left: 10px; /* Add margin to the left */
   }
   
