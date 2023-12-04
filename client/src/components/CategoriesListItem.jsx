@@ -13,10 +13,11 @@ function CategoriesListItem(props) {
     <>
 
       <div className="col">
-        <div className="card border-light mb-3">
-          <img src={image} className="card-img-bottom" alt="..." />
+        <div className="card border-secondary mb-3">
+        <div style={{ height: "400px", overflow: 'hidden' }}> 
+        <img src={image} className="card-img-bottom" alt="..." /></div>     
           <div className="card-body">
-            <button type="button" className="btn btn-info"
+            <button type="button" className="btn btn-success"
               onClick={() => handleClick(id)}>  {name}</button>
 
 

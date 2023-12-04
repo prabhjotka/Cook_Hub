@@ -3,9 +3,9 @@ const { Pool } = require("pg");
 module.exports = function(pool) {
 
   const getrecipes = function() {
-  const sql = "select * from Recipes  order by id  desc";
-  
-       return pool.query(sql)
+    const sql = "select * from Recipes  order by id  desc";
+
+    return pool.query(sql)
       .then(res => {
         return res.rows;
       });
@@ -30,22 +30,25 @@ module.exports = function(pool) {
       });
   };
 
-  const addrecipes = function({ name, category_id, description, ingredients_list, nutritional_information, image_url, instructions }) {
+  const addrecipes = function({ name, description, instructions, calories, protein, carbs, image_url, ingredients_list, category_id }) {
+    const caloriesInt = parseInt(calories);
+    const proteinInt = parseInt(protein);
+    const carbsInt = parseInt(carbs);
     const sql = `
       INSERT INTO Recipes
-      (name, category_id, description, ingredients_list, nutritional_information, image_url, instructions, user_id)
-      VALUES ($1, $2, $3, $4, $5::jsonb, $6, $7, $8)
+      (name,description,instructions,calories,protein,carbs,image_url,ingredients_list,category_id,user_id)
+      VALUES ($1, $2, $3, $4, $5, $6, $7, $8,$9,$10)
       RETURNING *`;
-  
-    const values = [name, category_id, description, ingredients_list, nutritional_information, image_url, instructions, 1];
-  
+
+    const values = [name, description, instructions, caloriesInt, proteinInt, carbsInt, image_url, ingredients_list, category_id, 1];
+
     return pool.query(sql, values)
       .then(res => {
         console.log('Query executed successfully:', res.rows[0]);
         return res.rows[0];
       });
   };
-  
+
 
   const deleterecipes = function(id) {
     const sql = 'delete from Recipes where id=($1) returning *';

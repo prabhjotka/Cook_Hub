@@ -4,12 +4,12 @@ import React from 'react';
 
 function RecipeListItem(props) {
 
-  const { name, description, instructions, nutritional_information, image_url, ingredients_list } = props.recipe;
-
+  const { name,description,instructions,calories,protein,carbs,image_url,ingredients_list } = props.recipe;
+  const imageUrl = `/${image_url}`;
   return (
     <div className="col">
       <div className="card border-light mb-3">
-        <div style={{ height: "400px", overflow: 'hidden' }}><img src={image_url} className="card-img-top" alt={name} /></div>
+        <div style={{ height: "400px", overflow: 'hidden' }}><img src={imageUrl} className="card-img-top" alt={name} /></div>
 
         <div className="card-body">
           <h5 className="card-title">{name}</h5>
@@ -22,12 +22,12 @@ function RecipeListItem(props) {
             <li className="list-group-item">
               <strong>Ingredients:</strong> {ingredients_list}
             </li>
-            { nutritional_information && (<li className="list-group-item">
+          <li className="list-group-item">
               <strong>Nutritional Information:</strong>
-              <p>Carbs:  {nutritional_information.carbs}</p>
-              <p>Calories:{nutritional_information.calories}</p>
-              <p>Protein:{nutritional_information.protein}</p>
-            </li>)}
+              {carbs && <p>Carbs:  {carbs}</p>}
+              { calories && <p>Calories:{calories}</p>}
+             {protein && <p>Protein:{protein}</p>}
+            </li>
           </ul>
         </div>
       </div>

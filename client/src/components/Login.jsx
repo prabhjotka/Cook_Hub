@@ -1,20 +1,44 @@
-
 import React, { useState } from 'react';
 import '../styles/styles/login.css';
+import { Link, useNavigate } from 'react-router-dom';
+import { useAuth } from './AuthContext';
+
+
+import axios from 'axios';
 
 const Login = () => {
+  const { login } = useAuth();
+  const navigate = useNavigate();
+  const [error, setError] = useState('');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [showPassword, setShowPassword] = useState(false); 
-  const handleLogin = () => {
+  
+  const [showPassword, setShowPassword] = useState(false);
 
-    //login logic here
-    console.log('Logging in with:', { username, password });
+  const handleLogin = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await axios.post('/api/user', {
+        username,
+        password,
+      });
+      console.log('API response:', response.data);
+
+      localStorage.setItem('isAuthenticated', 'true');
+      localStorage.setItem('token', response.data.token);
+      console.log('Token saved:', response.data.token);
+
+     login(username);
+      navigate('/');
+    } catch (error) {
+      console.log('Error:', error);
+      setError('Invalid username or password');
+    }
   };
 
   const handleCancel = () => {
-    // Add any cancel logic or redirection here
-    console.log('Login cancelled');
+    navigate("/");
   };
 
   const handleTogglePassword = () => {
@@ -26,7 +50,7 @@ const Login = () => {
       <h2>Login</h2>
       <form>
         <div className="form-group">
-        <label htmlFor="username">Username:</label>
+          <label htmlFor="username">Username:</label>
           <input
             type="text"
             id="username"
@@ -37,8 +61,8 @@ const Login = () => {
         </div>
 
         <div className="form-group">
-
-           <input
+          <label htmlFor="password">Password:</label>
+          <input
             type={showPassword ? 'text' : 'password'}
             id="password"
             value={password}
@@ -52,6 +76,8 @@ const Login = () => {
             {showPassword ? 'Hide' : 'Show'} Password
           </span>
         </div>
+
+        {error && <p className="error">{error}</p>}
 
         <div className="button-group">
           <button type="button" onClick={handleLogin}>
@@ -67,3 +93,5 @@ const Login = () => {
 };
 
 export default Login;
+
+

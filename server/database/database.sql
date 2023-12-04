@@ -23,11 +23,13 @@ CREATE TABLE Recipes (
     name VARCHAR(255) NOT NULL,
     description TEXT,
     instructions TEXT NOT NULL,
-    nutritional_information  JSONB,
-    image_url VARCHAR(255)  NOT NULL,
+    calories INT,
+    protein INT,
+    carbs INT,
+    image_url VARCHAR(255) NOT NULL,
     ingredients_list VARCHAR(500) NOT NULL,
-    category_id  INT REFERENCES Categories(id),
-     user_id INT REFERENCES Users(id),
+    category_id INT REFERENCES Categories(id),
+    user_id INT REFERENCES Users(id),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 

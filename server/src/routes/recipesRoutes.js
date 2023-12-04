@@ -37,8 +37,8 @@ const routes = function(pool) {
 
   router.post("/", (req, res) => {
     console.log(req.body);
-    const { name,category_id,ingredients_list,image_url,instructions} = req.body;
-    addrecipes({ name,category_id,ingredients_list,image_url,instructions})
+    const { name,description,instructions,calories,protein,carbs,image_url,ingredients_list,category_id} = req.body;
+    addrecipes({ name,description,instructions,calories,protein,carbs,image_url,ingredients_list,category_id})
     .then(data => {
       res.json(data);
     })
