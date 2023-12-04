@@ -30,15 +30,17 @@ module.exports = function(pool) {
       });
   };
 
-  const addrecipes = function({ name, description, instructions, nutritional_information, image_url, ingredients_list, category_id }) {
-    const nutritionalInformationJSON = JSON.stringify(nutritional_information);
+  const addrecipes = function({ name, description, instructions, calories, protein, carbs, image_url, ingredients_list, category_id }) {
+    const caloriesInt = parseInt(calories);
+    const proteinInt = parseInt(protein);
+    const carbsInt = parseInt(carbs);
     const sql = `
       INSERT INTO Recipes
-      (name, description, instructions,nutritional_information,image_url,ingredients_list,category_id, user_id)
-      VALUES ($1, $2, $3, $4::jsonb, $5, $6, $7, $8)
+      (name,description,instructions,calories,protein,carbs,image_url,ingredients_list,category_id,user_id)
+      VALUES ($1, $2, $3, $4, $5, $6, $7, $8,$9,$10)
       RETURNING *`;
 
-    const values = [name, description, instructions, nutritionalInformationJSON, image_url, ingredients_list, category_id, 1];
+    const values = [name, description, instructions, caloriesInt, proteinInt, carbsInt, image_url, ingredients_list, category_id, 1];
 
     return pool.query(sql, values)
       .then(res => {

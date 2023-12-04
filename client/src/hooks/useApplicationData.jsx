@@ -51,8 +51,8 @@ const searchRecipe = function (name) {
     });
 }
 
-  const addRecipe = function(name, description, instructions,nutritional_information,image_url,ingredients_list,category_id) {
-    axios.post("/api/recipes", {name, description, instructions,nutritional_information,image_url,ingredients_list,category_id})
+  const addRecipe = function(name,description,instructions,calories,protein,carbs,image_url,ingredients_list,category_id) {
+    axios.post("/api/recipes", {name,description,instructions,calories,protein,carbs,image_url,ingredients_list,category_id})
       .then(res => {
         console.log(res.data);
         setData([res.data, ...data]);
