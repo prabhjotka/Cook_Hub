@@ -1,8 +1,7 @@
 // FavoritesPage.jsx
 
 import React from 'react';
-import RecipeList from './RecipeList'; // Assuming you have a RecipeList component
-
+import RecipeList from './RecipeList';
 function FavoritesPage({ favorites, removeFromFavorites }) {
   return (
     <div>
