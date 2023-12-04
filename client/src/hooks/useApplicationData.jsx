@@ -51,7 +51,7 @@ const searchRecipe = function (name) {
     });
 }
 
-  const addItem = function(name,category_id,ingredients_list,image_url,instructions) {
+  const addRecipe = function(name,category_id,ingredients_list,image_url,instructions) {
     axios.post("/api/recipes", {name,category_id,ingredients_list,image_url,instructions})
       .then(res => {
         console.log(res.data);
@@ -74,7 +74,7 @@ const searchRecipe = function (name) {
   //   setData(data.filter(item => item.id !== id));
   // };
  
-  return { error, categories,recipes,categoryRecipes,searchResults,searchRecipe, fetchItems,getCategoryId,addItem};
+  return { error, categories,recipes,categoryRecipes,searchResults,searchRecipe, fetchItems,getCategoryId, addRecipe};
 };
 
 export default useApplicationData;

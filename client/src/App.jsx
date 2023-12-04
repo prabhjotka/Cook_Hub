@@ -11,21 +11,21 @@ import AddNewRecipe from './components/AddNewRecipe';
 import HomePage from './components/HomePage';
 import './App.css';
 import Login from './components/Login';
+import { AuthProvider } from './components/AuthContext';
 
 
 export default function App() {
-  const {categories,  recipes,error,categoryRecipes, searchResults,addItem,searchRecipe,getCategoryId} = useApplicationData();
+  const {categories,  recipes,error,categoryRecipes, searchResults, addRecipe,searchRecipe,getCategoryId}
+   = useApplicationData();
 
   return (
     <div className="App">
-    
-    <BrowserRouter>
+     <AuthProvider>
+     <BrowserRouter>
         <NavBar  searchRecipe={searchRecipe}/>
-        
         <Routes>
           <Route path="/login" element={<Login/>}/>
-          <Route path="/addRecipe" element={<AddNewRecipe categories={categories} addItem={addItem}/>} /> 
-       
+          <Route path="/addRecipe" element={<AddNewRecipe categories={categories}  addRecipe={ addRecipe}/>} /> 
           <Route path="/" element={<HomePage />} />
           <Route path="/categories" element={<CategoriesList categories={categories} getCategoryId={getCategoryId}/>} />
           <Route path="/recipes" element={<RecipeList  recipes={recipes }/>} />
@@ -34,6 +34,8 @@ export default function App() {
         </Routes>
       <Footer/>
       </BrowserRouter>
+     </AuthProvider>
+   
      
       
     </div>

@@ -1,31 +1,32 @@
 
-import React, { useState,useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import Form from 'react-bootstrap/Form';
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from './AuthContext';
 
 const NavBar = (props) => {
-
-  const [searchvalue,setSearchValue]=useState('');
-  const navigate=useNavigate();
+  const { user, logout } = useAuth();
+  const [searchvalue, setSearchValue] = useState('');
+  const navigate = useNavigate();
   const formRef = useRef(null);
+
   const handleChange = (event) => {
     setSearchValue(event.target.value)
-   props.searchRecipe(searchvalue);
+    props.searchRecipe(searchvalue);
   }
-  const navigateTosearchPage=function(event)
-  {
+
+  const navigateTosearchPage = function(event) {
     if (event.key === 'Enter') {
       event.preventDefault();
       props.searchRecipe(searchvalue);
-      navigate(`/search`);    
-    }   
+      navigate(`/search`);
+    }
 
   }
-  const handleMenu=function()
-  {
+  const handleMenu = function() {
     setSearchValue('');
     formRef.current.reset();
   }
@@ -44,18 +45,29 @@ const NavBar = (props) => {
             <Nav.Link as={Link} to="/" onClick={handleMenu}>
               Home
             </Nav.Link>
-            <Nav.Link as={Link} to="/recipes"  onClick={handleMenu}>
+            <Nav.Link as={Link} to="/recipes" onClick={handleMenu}>
               All Recipes
             </Nav.Link>
-            <Nav.Link as={Link} to="/categories"  onClick={handleMenu}>
-             Categories
+            <Nav.Link as={Link} to="/categories" onClick={handleMenu}>
+              Categories
             </Nav.Link>
-            <Nav.Link as={Link} to="/login"  onClick={handleMenu}>
+            <Nav.Link as={Link} to="/login" onClick={handleMenu}>
               Login
             </Nav.Link>
-            <Nav.Link as={Link} to="/addRecipe"  onClick={handleMenu}>
-             Add New Recipe
-            </Nav.Link>
+
+            {user ? (
+              <>
+                <span className="nav-link">Welcome, {user.username}</span>
+                <Nav.Link as={Link} to="/addRecipe" onClick={handleMenu}>
+                  Add New Recipe
+                </Nav.Link>
+                <Nav.Link  as={Link} to="/"onClick={logout}>Logout</Nav.Link>
+              </>
+            ) : (
+              null
+            )}
+
+
           </Nav>
           <Form className="d-flex" ref={formRef}>
             <Form.Control
@@ -68,8 +80,8 @@ const NavBar = (props) => {
               onChange={handleChange}
               onKeyDown={navigateTosearchPage}
             />
-            </Form>
-  
+          </Form>
+
         </Navbar.Collapse>
       </div>
     </Navbar>

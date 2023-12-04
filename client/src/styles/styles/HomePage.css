@@ -1,0 +1,16 @@
+/* HomePage.css */
+
+.guest-button-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .guest-button {
+    font: verdana;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 15px;
+    color: rgb(240, 244, 240);
+    border-color: darkgreen;
+  }
+  

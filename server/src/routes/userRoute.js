@@ -1,10 +1,12 @@
 const express = require('express');
 const router = express.Router();
 
+
 const routes = function(pool) {
-  const {getuser} = require('../database/user')(pool);
+  const {getuser,getUserCredentials} = require('../database/user')(pool);
 
   router.get("/", (req, res) => {
+   
     getuser().then(data => {
       res.json(data);
     })
@@ -13,6 +15,13 @@ const routes = function(pool) {
         res.status(500).json({error: err.message});
       });
   });
+  router.post("/", (req, res) => {
+    const { username, password } = req.body;
+    getUserCredentials(res, username, password);
+  });
+
+
+
 
   return router;
 };

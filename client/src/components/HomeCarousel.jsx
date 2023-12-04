@@ -4,19 +4,19 @@ function HomeCarousel() {
   return (
     <Carousel interval={1000}>
       <Carousel.Item>
-        <img src="../../public/Avocado_Toast.jpeg" />
+        <img src="/Avocado_Toast.jpeg" />
       </Carousel.Item>
       <Carousel.Item>
-        <img src="../../public/Margherita_Pizza.jpeg" />
+        <img src="/Margherita_Pizza.jpeg" />
       </Carousel.Item>
       <Carousel.Item>
-        <img src="../../public/Quinoa_Salad.jpeg" />
+        <img src="/Quinoa_Salad.jpeg" />
       </Carousel.Item>
       <Carousel.Item>
-        <img src="../../public/Sushi_Rolls.jpeg" />
+        <img src="/Sushi_Rolls.jpeg" />
       </Carousel.Item>
       <Carousel.Item>
-        <img src="../../public/Spicy_Shrimp_Tacos.jpeg" />
+        <img src="/Spicy_Shrimp_Tacos.jpeg" />
       </Carousel.Item>
     </Carousel>
   );

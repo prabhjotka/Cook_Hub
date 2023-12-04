@@ -1,7 +1,7 @@
 
 /* Container styles */
 .login-container {
-    max-width: 300px;
+    max-width: 650px;
     margin: auto;
     padding: 20px;
     border: 1px solid #0f0101;
@@ -9,12 +9,14 @@
     box-shadow: 0 0 10px rgba(255, 7, 7, 0.1);
     background-color: #fff;
     margin-top: 40px;
+    margin-bottom: 80px;
     transition: box-shadow 0.3s ease-in-out;
+
   }
 
   /* Form group styles */
   .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 40px;
   }
 
   /* Heading styles */

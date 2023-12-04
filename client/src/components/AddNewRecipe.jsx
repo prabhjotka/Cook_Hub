@@ -9,7 +9,7 @@ import '../styles/styles/addRecipe.css';
 
 function AddNewRecipe(props) {
   const categories = props.categories || [];
- 
+
   const [state, setState] = useState({
     name: "",
     category_id: "",
@@ -30,9 +30,9 @@ function AddNewRecipe(props) {
     }
   };
 
-  const handleSubmit=function(e)
-  {e.preventDefault();
-    props.addItem(state.name,state.category_id,state.ingredients_list,state.image_url,state.instructions);
+  const handleSubmit = function(e) {
+    e.preventDefault();
+    props.addRecipe(state.name, state.category_id, state.ingredients_list, state.image_url, state.instructions);
   }
   return (
     <div className="addRecipe">
@@ -46,7 +46,7 @@ function AddNewRecipe(props) {
               placeholder="Enter Recipe Title"
               name="recipeName"
               value={state.name}
-              onChange={(e) => setState({ ...state, name: e.target.value })}/>
+              onChange={(e) => setState({ ...state, name: e.target.value })} />
           </FloatingLabel>
         </Col>
         <Col md>
@@ -58,8 +58,8 @@ function AddNewRecipe(props) {
               onChange={(e) => setState({ ...state, category_id: e.target.value })}>
               <option>Select category</option>
               {categories.map((category) => (
-                <option key={category.id} 
-                value={category.id}>
+                <option key={category.id}
+                  value={category.id}>
                   {category.name}
                 </option>
               ))}
@@ -112,12 +112,12 @@ function AddNewRecipe(props) {
             placeholder="Enter Image Path"
             multiple accept='image/*'
             name="img"
-           onChange={handleChange}
+            onChange={handleChange}
           />
-         <Button variant="secondary" id="button-addon2"
-          onClick={() => document.querySelector('[type=file]').click()}>
-          Browse Image
-      </Button>
+          <Button variant="secondary" id="button-addon2"
+            onClick={() => document.querySelector('[type=file]').click()}>
+            Browse Image
+          </Button>
         </InputGroup>
       </Form.Group>
 
