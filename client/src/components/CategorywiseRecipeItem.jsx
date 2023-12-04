@@ -3,7 +3,7 @@ import React from 'react';
 
 function CategorywiseRecipeItem(props) {
 
-  const { name, description, instructions, nutritional_information, image_url } = props.categoryRecipe;
+  const { name,description,instructions,calories,protein,carbs,image_url,ingredients_list} = props.categoryRecipe;
   const imageUrl = `/${image_url}`;
   return (
     <div className="col">
@@ -18,10 +18,13 @@ function CategorywiseRecipeItem(props) {
               <strong>Instructions:</strong> {instructions}
             </li>
             <li className="list-group-item">
+              <strong>Ingredients List:</strong> {ingredients_list}
+            </li>
+            <li className="list-group-item">
               <strong>Nutritional Information:</strong>
-              <p>Carbs:  {nutritional_information.carbs}</p>
-              <p>Calories:{nutritional_information.calories}</p>
-              <p>Protein:{nutritional_information.protein}</p>
+              <p>Carbs:  {carbs}</p>
+              <p>Calories:{calories}</p>
+              <p>Protein:{protein}</p>
             </li>
           </ul>
         </div>
