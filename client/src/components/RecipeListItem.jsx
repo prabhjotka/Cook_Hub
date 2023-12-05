@@ -1,9 +1,10 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import React from 'react';
-
+import { Link } from 'react-router-dom';
+import RecipeDetails from './RecipeDetails';
 const RecipeListItem = (props) => {
-  const { name, description, instructions, calories, protein, carbs, image_url, ingredients_list } = props.recipe;
+  const { id, name,  description,  instructions,  calories,  protein,  carbs,  image_url,  ingredients_list } = props.recipe;
   const imageUrl = `/${image_url}`;
 
   const handleFavoriteClick = () => {
@@ -19,12 +20,14 @@ const RecipeListItem = (props) => {
     <div className="col">
       <div className="card border-light mb-3">
         <div style={{ height: "400px", overflow: 'hidden' }}>
-          <img src={imageUrl} className="card-img-top" alt={name} />
+          <img src={ imageUrl} className="card-img-top" alt={name} />
         </div>
 
         <div className="card-body">
-          <h5 className="card-title">{name}</h5>
-       
+          <h5 className="card-title"> <Link to={`/recipes/${id}`}>
+            {name}
+          </Link></h5>
+
           {description && (<p className="card-text">{description}</p>)}
           <ul className="list-group">
             <li className="list-group-item">

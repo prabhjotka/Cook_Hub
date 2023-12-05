@@ -64,7 +64,7 @@ const NavBar = (props) => {
                 <Nav.Link as={Link} to="/addRecipe" onClick={handleMenu}>
                   Add New Recipe
                 </Nav.Link>
-                <Nav.Link  as={Link} to="/"onClick={logout}>Logout</Nav.Link>
+                <Nav.Link as={Link} to="/" onClick={logout}>Logout</Nav.Link>
               </>
             ) : (
               null

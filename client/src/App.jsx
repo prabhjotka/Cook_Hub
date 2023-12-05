@@ -9,6 +9,7 @@ import Footer from './components/Footer';
 import SearchRecipe from './components/SearchRecipe';
 import AddNewRecipe from './components/AddNewRecipe';
 import HomePage from './components/HomePage';
+import RecipeDetails from './components/RecipeDetails';
 import './App.css';
 import Login from './components/Login';
 import { AuthProvider } from './components/AuthContext';
@@ -32,6 +33,8 @@ export default function App() {
           <Route path="/recipes" element={<RecipeList  recipes={recipes }/>} />
           <Route path="/category/:categoryId" element={<CategorywiseRecipeList categoryRecipes={categoryRecipes} />}  />
           <Route path="/search" element={<SearchRecipe recipes={searchResults} />} />
+          <Route path="/recipes/:id" element= {<RecipeDetails recipes={ recipes}/>}/>
+       
           <Route path="/favourite" element={<Favorite />} />
         </Routes>
       <Footer/>
