@@ -12,7 +12,8 @@ import HomePage from './components/HomePage';
 import './App.css';
 import Login from './components/Login';
 import { AuthProvider } from './components/AuthContext';
-
+import favourite from './components/favourite';
+import favoritePage from './components/favouritePage'; 
 
 export default function App() {
   const {categories,  recipes,error,categoryRecipes, searchResults, addRecipe,searchRecipe,getCategoryId}
@@ -31,6 +32,7 @@ export default function App() {
           <Route path="/recipes" element={<RecipeList  recipes={recipes }/>} />
           <Route path="/category/:categoryId" element={<CategorywiseRecipeList categoryRecipes={categoryRecipes} />}  />
           <Route path="/search" element={<SearchRecipe recipes={searchResults} />} />
+          <Route path="/favourite" component={FavouritePage} />
         </Routes>
       <Footer/>
       </BrowserRouter>

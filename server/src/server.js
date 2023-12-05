@@ -24,6 +24,9 @@ const pool = require('./database/connect');
 const categoryRoutes = require('./routes/categoriesRoute');
 app.use('/api/categories', categoryRoutes(pool));
 
+// fav route
+const favouritesRoutes = require('./routes/favouritesRoutes');
+app.use('/api/favourites', favouritesRoutes);
 
 
 const userRoutes = require('./routes/userRoute');

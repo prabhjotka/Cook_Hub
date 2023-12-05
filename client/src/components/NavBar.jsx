@@ -54,6 +54,9 @@ const NavBar = (props) => {
             <Nav.Link as={Link} to="/login" onClick={handleMenu}>
               Login
             </Nav.Link>
+            <Nav.Link as={Link} to="/favourite" onClick={handleMenu}>
+              Favourite
+            </Nav.Link>
 
             {user ? (
               <>
