@@ -11,9 +11,11 @@ const useApplicationData = function() {
 
   const fetchItems = useCallback(() => {
     Promise.all([axios.get('/api/categories'),
+  
      axios.get('/api/recipes'), 
     ])
       .then(all => {
+        console.log("All",all);
         setCategories(all[0].data);
         setRecipes(all[1].data); 
       })
