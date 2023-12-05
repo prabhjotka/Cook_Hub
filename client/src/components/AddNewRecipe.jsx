@@ -26,15 +26,15 @@ function AddNewRecipe(props) {
     carbs: "",
   });
 
-  const handleChange = (e) => {
-    const { name, value, files } = e.target;
-    if (name === 'img' && files && files.length > 0) {
-      const imageUrl = URL.createObjectURL(files[0]);
-      setState((prevState) => ({ ...prevState, image_url: imageUrl }));
-    } else {
-      setState((prevState) => ({ ...prevState, [name]: value }));
-    }
-  };
+  // const handleChange = (e) => {
+  //   const { name, value, files } = e.target;
+  //   if (name === 'img' && files && files.length > 0) {
+  //     const imageUrl = URL.createObjectURL(files[0]);
+  //     setState((prevState) => ({ ...prevState, image_url: imageUrl }));
+  //   } else {
+  //     setState((prevState) => ({ ...prevState, [name]: value }));
+  //   }
+  // };
 
   const handleSubmit = function(e) {
     e.preventDefault();
@@ -168,20 +168,19 @@ function AddNewRecipe(props) {
             <Form.Label></Form.Label>
             <InputGroup>
               <Form.Control
-                type="file"
+                type="text"
                 placeholder="Enter Image Path"
                 multiple
-                accept="image/*"
                 name="img"
-                onChange={handleChange}
+                onChange={(e) => setState({ ...state, image_url: e.target.value })}
               />
-              <Button
+              {/* <Button
                 variant="secondary"
                 id="button-addon2"
                 onClick={() => document.querySelector('[type=file]').click()}
               >
                 Browse Image
-              </Button>
+              </Button> */}
             </InputGroup>
           </Form.Group>
 
