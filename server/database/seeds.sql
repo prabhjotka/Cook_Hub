@@ -7,6 +7,14 @@ VALUES
   (4,'Desserts','Desserts.jpg'),
   (5,'Drinks','Drinks.jpg');
 
+
+-- Insert default favorites data
+INSERT INTO favorites (user_id, item_id) VALUES
+    (1, 101),  -- User with ID 1 favorites item with ID 101
+    (1, 102),  -- User with ID 1 favorites item with ID 102
+    (2, 101),  -- User with ID 2 favorites item with ID 101
+    (3, 103);  -- User with ID 3 favorites item with ID 103
+
 INSERT INTO Recipes (
     name, 
     description, 
