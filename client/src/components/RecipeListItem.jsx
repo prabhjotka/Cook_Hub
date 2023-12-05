@@ -10,6 +10,11 @@ const RecipeListItem = (props) => {
     addToFavorites(props.recipe.id); 
   };
 
+  const addToFavorites = (recipeId) => {
+
+    console.log(`Adding recipe ${recipeId} to favorites`);
+  };
+
   return (
     <div className="col">
       <div className="card border-light mb-3">
@@ -19,7 +24,7 @@ const RecipeListItem = (props) => {
 
         <div className="card-body">
           <h5 className="card-title">{name}</h5>
-
+       
           {description && (<p className="card-text">{description}</p>)}
           <ul className="list-group">
             <li className="list-group-item">
