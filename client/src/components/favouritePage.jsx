@@ -1,14 +1,16 @@
 import React from 'react';
-import Favourite from './favourite'; // Correct the case here
+import Favourite from './favourite';
 
-const FavoritesPage = () => {
+ 
+
+const FavouritePage = () => {
   return (
     <div>
-      <h1>Welcome to Your Favorites Page</h1>
+      <h1>Welcome to Your Favourites Page</h1>
       <Favourite />
-      <button> faHeart</button>
+      
     </div>
   );
 };
 
-export default FavoritesPage;
+export default FavouritePage;

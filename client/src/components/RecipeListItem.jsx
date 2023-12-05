@@ -1,5 +1,5 @@
-
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import React from 'react';
 
 function RecipeListItem(props) {
@@ -22,6 +22,7 @@ function RecipeListItem(props) {
             <li className="list-group-item">
               <strong>Ingredients:</strong> {ingredients_list}
             </li>
+            
           <li className="list-group-item">
               <strong>Nutritional Information:</strong>
               {carbs && <p>Carbs:  {carbs}</p>}

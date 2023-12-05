@@ -9,7 +9,7 @@ function RecipeList(props) {
       recipe={recipe}
        />;
   });
-
+  
   return (
     <div className="container" style={{ position: 'relative', overflow: 'hidden' }}>
     <div className="row row-cols-2 row-cols-md-2 g-4">
