@@ -22,7 +22,10 @@ function RecipeListItem(props) {
             <li className="list-group-item">
               <strong>Ingredients:</strong> {ingredients_list}
             </li>
-            
+            <button onClick={() => handleFavouriteClick(favourite.id)}>
+  <FontAwesomeIcon icon={faHeart} />
+</button>
+
           <li className="list-group-item">
               <strong>Nutritional Information:</strong>
               {carbs && <p>Carbs:  {carbs}</p>}
