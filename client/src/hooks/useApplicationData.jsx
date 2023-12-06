@@ -24,12 +24,11 @@ const useApplicationData = function() {
         setError(err.message);
       });
   }, []);
-
-  // Fetch data on first render
   useEffect(() => {
     fetchItems();
   }, []);
 
+  
 const getCategoryId=function(id)
 {
   axios.get(`/api/recipes/${id}`)
@@ -63,20 +62,9 @@ const searchRecipe = function (name) {
         setError(err.message);
       });
   };
-
-  // const deleteItem = function(id) {
-  //   axios.delete(`/api/items/${id}`)
-  //     .then(res => {
-  //       setData(data.filter(item => item.id !== id));
-  //     })
-  //     .catch((err) => {
-  //       setError(err.message);
-  //     });
-
-  //   setData(data.filter(item => item.id !== id));
-  // };
  
-  return { error, categories,recipes,categoryRecipes,searchResults,searchRecipe, fetchItems,getCategoryId, addRecipe};
+  return { error, categories,recipes,categoryRecipes,searchResults
+    ,searchRecipe, fetchItems,getCategoryId, addRecipe};
 };
 
 export default useApplicationData;
