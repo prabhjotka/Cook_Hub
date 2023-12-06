@@ -1,11 +1,11 @@
 
-INSERT INTO Categories (id,name,image)
-VALUES
-  (1,'Breakfast','Avocado_Toast.jpeg'),
-  (2,'Salads','Caprese_Salad.jpeg'),
-  (3,'Main Dishes','Main_dishes.jpg'),
-  (4,'Desserts','Desserts.jpg'),
-  (5,'Drinks','Drinks.jpg');
+-- -- INSERT INTO Categories (id,name,image)
+-- -- VALUES
+-- --   (1,'Breakfast','Avocado_Toast.jpeg'),
+-- --   (2,'Salads','Caprese_Salad.jpeg'),
+-- --   (3,'Main Dishes','Main_dishes.jpg'),
+-- --   (4,'Desserts','Desserts.jpg'),
+-- --   (5,'Drinks','Drinks.jpg');
 
 INSERT INTO Recipes (
     name, 
@@ -22,7 +22,7 @@ INSERT INTO Recipes (
   (
     'Vegetarian Stir-Fry',
     'Colorful and flavorful vegetable stir-fry',
-    'Chop and stir-fry your favorite vegetables, Add soy sauce and spices, Serve over rice.',
+    'Chop mixed vegetables (bell peppers, broccoli, carrots) into bite-sized pieces. Heat a wok or large skillet over medium-high heat. Add a splash of oil and stir-fry the vegetables until tender-crisp. Pour in 2 tbsp of soy sauce and your favorite spices, tossing to coat. Serve over a bed of steamed rice.',
     250,
     8,
     30,
@@ -34,7 +34,7 @@ INSERT INTO Recipes (
   (
     'Margherita Pizza',
     'Classic pizza with tomato, mozzarella, and basil',
-    'Roll out pizza dough, Add tomato sauce, cheese, and fresh basil, Bake until crust is golden.',
+    'Roll out pizza dough on a floured surface. Spread 1/2 cup of tomato sauce evenly over the dough. Sprinkle 1 cup of mozzarella cheese over the sauce. Arrange fresh basil leaves on top. Bake in a preheated oven at 400°F (200°C) until the crust is golden.',
     400,
     15,
     45,
@@ -46,7 +46,7 @@ INSERT INTO Recipes (
   (
     'Avocado Toast',
     'Simple and healthy avocado toast',
-    'Toast bread, Spread mashed avocado on top, Sprinkle with salt and pepper.',
+    'Toast two slices of your favorite bread. Mash one ripe avocado and spread it evenly over the toast. Sprinkle with a pinch of salt and pepper. Optional: Drizzle with olive oil or add a poached egg on top.',
     200,
     5,
     15,
@@ -58,7 +58,7 @@ INSERT INTO Recipes (
   (
     'Mango Salsa Chicken',
     'Grilled chicken topped with fresh mango salsa',
-    'Grill chicken breasts, Top with a mix of diced mango, red onion, cilantro, and lime juice.',
+    'Grill chicken breasts until fully cooked. In a bowl, mix diced mango, red onion, cilantro, and lime juice to create the salsa. Top grilled chicken with the mango salsa. Serve with your favorite side dishes.',
     300,
     20,
     25,
@@ -70,7 +70,7 @@ INSERT INTO Recipes (
   (
     'Spicy Shrimp Tacos',
     'Tacos filled with spicy shrimp, slaw, and avocado',
-    'Saute shrimp with spices., Fill tortillas with shrimp, slaw, and sliced avocado.',
+    'Saute shrimp with spices until pink and opaque. Fill tortillas with cooked shrimp, slaw mix, and sliced avocado. Optional: Garnish with cilantro and lime wedges. Serve warm and enjoy the spicy kick!',
     350,
     18,
     30,
@@ -82,7 +82,7 @@ INSERT INTO Recipes (
   (
     'Greek Salad',
     'Fresh and tangy Greek salad with feta cheese',
-    'Combine chopped cucumber, tomatoes, olives, and feta, Drizzle with olive oil and sprinkle with oregano.',
+    'Chop cucumber, tomatoes, olives, and feta cheese into bite-sized pieces. Combine in a bowl and toss with olive oil. Sprinkle oregano on top for added flavor. Serve chilled as a refreshing side dish or light meal.',
     300,
     10,
     20,
@@ -94,7 +94,7 @@ INSERT INTO Recipes (
   (
     'Pineapple Fried Rice',
     'Sweet and savory fried rice with pineapple',
-    'Stir-fry rice with diced pineapple, vegetables, and soy sauce, Optional: add cooked shrimp or chicken.',
+    'Stir-fry cooked rice with diced pineapple, mixed vegetables, and soy sauce. Optional: Add cooked shrimp or chicken for protein. Toss until well combined and heated through. Serve garnished with chopped green onions.',
     400,
     12,
     50,
@@ -106,7 +106,7 @@ INSERT INTO Recipes (
   (
     'Caprese Salad',
     'Classic Italian salad with tomatoes, mozzarella, and basil',
-    'Slice tomatoes and mozzarella. Arrange on a plate with fresh basil. Drizzle with balsamic glaze.',
+    'Slice tomatoes and mozzarella cheese into rounds. Arrange on a plate with fresh basil leaves. Drizzle with balsamic glaze for added richness. Serve as a light and elegant appetizer or side dish.',
     250,
     15,
     10,
@@ -118,7 +118,7 @@ INSERT INTO Recipes (
   (
     'Sushi Rolls',
     'Homemade sushi rolls with your favorite fillings',
-    'Roll sushi with rice, seaweed, and your choice of fillings, Serve with soy sauce and pickled ginger.',
+    'Prepare sushi rice according to package instructions. Lay a sheet of seaweed on a bamboo sushi rolling mat. Spread a thin layer of rice on the seaweed, leaving a border at the top. Add your favorite fillings, roll tightly, and slice into bite-sized pieces. Serve with soy sauce and pickled ginger.',
     350,
     18,
     40,
@@ -130,7 +130,7 @@ INSERT INTO Recipes (
   (
     'Mushroom Risotto',
     'Creamy and comforting mushroom risotto',
-    'Saute mushrooms and onions. Cook Arborio rice with broth until creamy, Finish with Parmesan cheese.',
+    'Saute mushrooms and onions in a pan until tender. Add Arborio rice and stir until coated with oil. Gradually add vegetable broth, stirring continuously until absorbed. Finish with grated Parmesan cheese for a creamy texture. Serve hot with a sprinkle of fresh parsley.',
     400,
     10,
     45,
@@ -142,7 +142,7 @@ INSERT INTO Recipes (
   (
     'Fruit Smoothie Bowl',
     'Healthy and colorful fruit smoothie bowl',
-    'Blend your favorite fruits with yogurt., Top with granola, nuts, and fresh berries.',
+    'Blend assorted fruits (berries, banana, mango) with yogurt until smooth. Pour the smoothie into a bowl. Top with granola, mixed nuts, and fresh berries. Enjoy a nutritious and vibrant start to your day!',
     300,
     8,
     40,
@@ -154,7 +154,7 @@ INSERT INTO Recipes (
   (
     'BBQ Pulled Pork Sandwich',
     'Slow-cooked pulled pork in barbecue sauce',
-    'Cook pork shoulder in slow cooker, Shred and mix with barbecue sauce, Serve in a bun.',
+    'Cook pork shoulder in a slow cooker until tender. Shred the pork and mix with barbecue sauce. Toast buns and fill with the pulled pork mixture. Serve with coleslaw for a classic barbecue experience.',
     500,
     25,
     35,
@@ -166,7 +166,7 @@ INSERT INTO Recipes (
   (
     'Cauliflower Crust Pizza',
     'Low-carb pizza with cauliflower crust',
-    'Make crust with cauliflower, cheese, and egg, Add your favorite toppings, Bake until crispy.',
+    'Make the crust by blending cauliflower, cheese, and egg. Press the mixture onto a baking sheet and bake until crispy. Add your favorite pizza toppings. Bake until the cheese is melted and bubbly. Enjoy a guilt-free pizza experience!',
     350,
     15,
     25,
@@ -178,7 +178,7 @@ INSERT INTO Recipes (
   (
     'Lemon Garlic Butter Shrimp',
     'Quick and flavorful lemon garlic butter shrimp',
-    'Saute shrimp in garlic and butter, Squeeze fresh lemon juice, Garnish with parsley.',
+    'Saute shrimp in minced garlic and butter until pink. Squeeze fresh lemon juice over the shrimp. Garnish with chopped parsley. Serve over pasta, rice, or with crusty bread for a delightful meal.',
     250,
     20,
     5,
@@ -190,7 +190,7 @@ INSERT INTO Recipes (
   (
     'Quinoa Salad',
     'Nutrient-packed quinoa salad with vegetables',
-    'Cook quinoa, Toss with diced cucumber, cherry tomatoes, and feta, Drizzle with olive oil.',
+    'Cook quinoa according to package instructions. Toss cooked quinoa with diced cucumber, cherry tomatoes, and crumbled feta. Drizzle with olive oil and toss until well combined. A refreshing and wholesome salad is ready to be served.',
     300,
     12,
     40,
@@ -202,7 +202,7 @@ INSERT INTO Recipes (
   (
     'Chicken Caesar Wrap',
     'Grilled chicken, romaine lettuce, and Caesar dressing in a wrap',
-    'Grill chicken, Wrap with romaine lettuce and Caesar dressing in a tortilla.',
+    'Grill chicken breasts until fully cooked. Wrap grilled chicken with fresh romaine lettuce in a tortilla. Drizzle Caesar dressing over the ingredients. Roll the wrap and secure with toothpicks if needed. A quick and satisfying meal on the go!',
     400,
     20,
     30,
@@ -214,7 +214,7 @@ INSERT INTO Recipes (
   (
     'Vegetable Lasagna',
     'Layered vegetable lasagna with marinara sauce and cheese',
-    'Layer lasagna noodles with marinara sauce, vegetables, and cheese, Bake until bubbly.',
+    'Cook lasagna noodles according to package instructions. Layer lasagna noodles with marinara sauce, sautéed mixed vegetables, and shredded cheese. Repeat the layers until the baking dish is filled. Bake until the cheese is melted and bubbly. Let it rest before slicing and serving.',
     350,
     15,
     30,
@@ -226,7 +226,7 @@ INSERT INTO Recipes (
   (
     'Peach Cobbler',
     'Sweet and juicy peach cobbler with a golden crust',
-    'Mix peaches with sugar and spices, Top with a buttery biscuit crust, Bake until golden brown.',
+    'Mix sliced peaches with sugar and spices in a baking dish. In a separate bowl, prepare a biscuit crust with flour, sugar, and butter. Spread the crust over the peaches and bake until golden brown. Allow it to cool slightly before serving with a scoop of vanilla ice cream.',
     300,
     3,
     45,
@@ -238,7 +238,7 @@ INSERT INTO Recipes (
   (
     'Teriyaki Salmon',
     'Grilled teriyaki-glazed salmon fillets',
-    'Marinate salmon in teriyaki sauce, Grill until fish flakes easily with a fork.',
+    'Marinate salmon in teriyaki sauce. Grill until fish flakes easily with a fork.',
     350,
     25,
     15,
@@ -250,7 +250,7 @@ INSERT INTO Recipes (
   (
     'Chocolate Avocado Mousse',
     'Rich and creamy chocolate mousse made with avocados',
-    'Blend avocados, cocoa powder, and sweetener until smooth, Chill before serving.',
+    'Blend avocados, cocoa powder, and sweetener until smooth. Chill before serving.',
     200,
     5,
     20,
@@ -259,5 +259,6 @@ INSERT INTO Recipes (
     1,
     1
   );
+
 
 

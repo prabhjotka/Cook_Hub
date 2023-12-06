@@ -35,7 +35,7 @@ const NavBar = (props) => {
 
       <div className="container">
         <Navbar.Brand as={Link} to="/">
-          Cook Hub
+        <img src="icons8-chef-hat-64.png"/> Cook Hub
         </Navbar.Brand>
 
         <Navbar.Toggle aria-controls="navbarNav" />
