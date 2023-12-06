@@ -1,6 +1,5 @@
 import React,{useState} from 'react';
 import RecipeListItem from './RecipeListItem';
-import { useEffect } from 'react';
 import { useFavoriteContext } from './FavoriteContext';
 function RecipeList(props) {
   const { favoriteRecipes, handleFavoriteToggle } = useFavoriteContext();  

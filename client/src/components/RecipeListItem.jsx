@@ -41,13 +41,6 @@ function RecipeListItem(props) {
           {description && (<p className="card-text">{description}</p>)}
         </div>
       </div>
-      {/* <button onClick={() => props.handleFavoriteToggle(id)}>
-         {props.isFavorite ? 'Remove from Favorites' : 'Add to Favorites'} 
-      </button> */}
-      {/* <button onClick={() => props.handleFavoriteToggle(id)} style={{ color: props.isFavorite ? 'red' : 'black' }}>
-  {props.isFavorite ? <FaHeart size={24} /> : <FaRegHeart size={24} />}
-</button> */}
-
     </div>
   );
 }
