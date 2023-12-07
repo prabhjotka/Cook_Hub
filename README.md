@@ -41,3 +41,11 @@ npm start
 - Github -> User Settings
 - Integrations.Applications
 - Render - Configure
+
+
+
+!["Home Page"]
+!["Login Page"]
+!["Admin Section"]
+!["Add new Recipe]
+!["Categories wise Recipes"]
