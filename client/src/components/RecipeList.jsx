@@ -1,12 +1,16 @@
-import React from 'react';
-import RecipeListItem from './RecipeListItem'
-
+import React,{useState} from 'react';
+import RecipeListItem from './RecipeListItem';
+import { useFavoriteContext } from './FavoriteContext';
 function RecipeList(props) {
+  const { favoriteRecipes, handleFavoriteToggle } = useFavoriteContext();  
+ 
   const recipes= Object.values(props.recipes) || [];
   const list = recipes.map((recipe) => {
     return <RecipeListItem
       key={recipe.id}
       recipe={recipe}
+      isFavorite={favoriteRecipes.includes(recipe.id)}
+        handleFavoriteToggle={handleFavoriteToggle}
        />;
   });
 

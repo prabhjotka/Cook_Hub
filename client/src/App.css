@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
 }
 
 code {
@@ -16,6 +17,8 @@ code {
 .App {
   margin: .2em;
   text-align: center;
+  background-color: azure;
+
 }
 
 h1 {

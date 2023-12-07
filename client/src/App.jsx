@@ -13,6 +13,7 @@ import RecipeDetails from './components/RecipeDetails';
 import './App.css';
 import Login from './components/Login';
 import { AuthProvider } from './components/AuthContext';
+import { FavoriteProvider } from './components/FavoriteContext';
 
 
 export default function App() {
@@ -22,6 +23,7 @@ export default function App() {
   return (
     <div className="App">
      <AuthProvider>
+      <FavoriteProvider>
      <BrowserRouter>
         <NavBar  searchRecipe={searchRecipe}/>
         <Routes>
@@ -37,6 +39,7 @@ export default function App() {
         </Routes>
       <Footer/>
       </BrowserRouter>
+      </FavoriteProvider>
      </AuthProvider>
    
      
