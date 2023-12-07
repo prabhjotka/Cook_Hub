@@ -44,8 +44,8 @@ npm start
 
 
 
-!["Home Page"]
-!["Login Page"]
-!["Admin Section"]
-!["Add new Recipe]
-!["Categories wise Recipes"]
+!["Home Page"]https://github.com/prabhjotka/Cook_Hub/blob/master/docs/Home%20page.png?raw=true
+!["Login Page"]https://github.com/prabhjotka/Cook_Hub/blob/master/docs/Login.png?raw=true
+!["Admin Section"]https://github.com/prabhjotka/Cook_Hub/blob/master/docs/Admin%20section.png?raw=true
+!["Add new Recipe]https://github.com/prabhjotka/Cook_Hub/blob/master/docs/Add%20New%20Recipe.png?raw=true
+!["Categories wise Recipes"]https://github.com/prabhjotka/Cook_Hub/blob/master/docs/Categories.png?raw=true
