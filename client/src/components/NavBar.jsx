@@ -2,6 +2,7 @@
 import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 import Nav from 'react-bootstrap/Nav';
 import Form from 'react-bootstrap/Form';
 import { useNavigate } from 'react-router-dom';
@@ -31,9 +32,14 @@ const NavBar = (props) => {
     formRef.current.reset();
   }
   return (
+    <>
+    
     <Navbar bg="dark" data-bs-theme="dark" sticky="top">
 
       <div className="container">
+      
+      
+     
         <Navbar.Brand as={Link} to="/">
         <img src="icons8-chef-hat-64.png"/> Cook Hub
         </Navbar.Brand>
@@ -45,9 +51,48 @@ const NavBar = (props) => {
             <Nav.Link as={Link} to="/" onClick={handleMenu}>
               Home
             </Nav.Link>
+
+            {/* <NavDropdown title="Meals" id="basic-nav-dropdown">
+              <NavDropdown.Item href="#action/3.1">Breakfast</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="#action/3.2">
+               Lunch
+              </NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="#action/3.3">Appetizer and Snacks</NavDropdown.Item>
+              <NavDropdown.Divider />
+  
+              <NavDropdown.Item href="#action/3.4">Desserts
+              </NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="#action/3.4">Drinks
+              </NavDropdown.Item>
+            </NavDropdown> */}
+
             <Nav.Link as={Link} to="/recipes" onClick={handleMenu}>
               All Recipes
             </Nav.Link>
+
+            
+{/* 
+            <NavDropdown title="Ingredients" id="basic-nav-dropdown">
+              <NavDropdown.Item href="#action/3.1">Brown Rice</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="#action/3.2">    
+              Avocados
+              </NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="#action/3.3">Corn Flour</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="#action/3.4">Chicken
+              </NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="#action/3.4">Chocolate
+              </NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="#action/3.4">Oats
+              </NavDropdown.Item>
+            </NavDropdown> */}
             <Nav.Link as={Link} to="/categories" onClick={handleMenu}>
               Categories
             </Nav.Link>
@@ -85,6 +130,7 @@ const NavBar = (props) => {
         </Navbar.Collapse>
       </div>
     </Navbar>
+    </>
   );
 };
 

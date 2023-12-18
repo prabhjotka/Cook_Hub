@@ -43,6 +43,7 @@ const getCategoryId=function(id)
 }
 
 const searchRecipe = function (name) {
+  // axios.get(`/api/recipes/search_recipe?search=${name}`)
   axios.get(`/api/recipes/search_recipe?search=${name}`)
     .then(res => {
       setSearchResults(res.data);

@@ -1,0 +1,13 @@
+# netlify.toml
+
+[[redirects]]
+  from = "/api/*"
+  to = "https://serene-macaron-b2348c.netlify.app/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  force = true
