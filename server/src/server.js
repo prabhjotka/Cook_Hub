@@ -11,10 +11,8 @@ const PORT = process.env.PORT || 8080;
 
 const cwd = process.cwd();
 const public = path.join(cwd, '..', 'public');
-
-app.use(cors());
 app.use(cors({
-  origin: 'https://your-netlify-app-name.netlify.app',
+  origin: 'https://mycookhub.netlify.app',
   credentials: true,
 }));
 
