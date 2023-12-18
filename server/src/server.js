@@ -24,8 +24,6 @@ app.use(express.static(public));
 app.use(express.json());
 app.use(morgan('dev'));
 
-
-
 const pool = require('./database/connect');
 
 // Use Routed Endpoints
