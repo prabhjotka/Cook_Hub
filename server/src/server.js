@@ -3,6 +3,7 @@ const express = require("express");
 const uniqid = require('uniqid');
 const morgan = require('morgan');
 const path = require('path');
+const cors = require('cors');
 
 const app = express();
 const PORT = process.env.PORT || 8080;
@@ -11,6 +12,11 @@ const PORT = process.env.PORT || 8080;
 const cwd = process.cwd();
 const public = path.join(cwd, '..', 'public');
 
+app.use(cors());
+app.use(cors({
+  origin: 'https://your-netlify-app-name.netlify.app',
+  credentials: true,
+}));
 
 app.use('/images/', express.static(path.join(public, 'images')));
 
